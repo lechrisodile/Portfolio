@@ -1,5 +1,5 @@
 "use client"
-
+import Image from "next/image"
 import { useState } from "react"
 import { IconButton, Box, Typography, Link, Drawer, useMediaQuery } from "@mui/material"
 import { Brightness4, Brightness7, Menu, Close } from "@mui/icons-material"
@@ -19,8 +19,8 @@ export function Navigation() {
   }
 
   const navLinks = [
-    { label: "À propos", id: "about" },
-    { label: "Compétences", id: "skills" },
+    { label: "About Me", id: "about" },
+    { label: "Skills", id: "skills" },
     { label: "Contact", id: "contact" },
   ]
 

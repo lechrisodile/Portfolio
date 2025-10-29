@@ -6,19 +6,28 @@ export function Skills() {
   const skillCategories = [
     {
       category: "Programming Languages",
-      skills: ["Python", "JavaScript", "TypeScript", "C/C++", "Java"],
+      skills: ["Python", "JavaScript", "TypeScript", "Java", "Visual Basic", "C/C++"],
     },
     {
-      category: "Web Development",
-      skills: ["React", "Next.js", "Node.js", "HTML/CSS", "Material-UI"],
+      category: "Web & App Development",
+      skills: ["React", "Next.js", "T3 Stack", "Node.js", "Tailwind CSS", "Expo (React Native)"],
     },
     {
-      category: "Industrial Technologies",
-      skills: ["PLC Programming", "SCADA Systems", "Industrial IoT", "Automation", "Embedded Systems"],
+      category: "Automation & Embedded Systems",
+      skills: ["PLC (Siemens S7-1516)", "TIA Portal", "HMI Design", "Arduino", "ESP32", "MPU6050 (DMP + Kalman Filter)", "Stepper Motors"],
     },
     {
-      category: "Tools & Platforms",
-      skills: ["Git", "Docker", "Linux", "VS Code", "Arduino"],
+      category: "Networking, Cloud & Security",
+      skills: [
+        "WireGuard VPN",
+        "OpenVPN",
+        "Docker",
+        "Traefik",
+        "Oracle Cloud",
+        "Linux (Ubuntu / Rocky Linux)",
+        "VirtualBox",
+        "Network Simulation",
+      ],
     },
   ]
 
@@ -37,14 +46,19 @@ export function Skills() {
         <Typography variant="h2" gutterBottom sx={{ mb: 2 }}>
           Skills
         </Typography>
-        <Typography variant="body1" color="text.secondary" paragraph sx={{ mb: 6, maxWidth: 800 }}>
-          A comprehensive set of technical skills spanning software development, industrial automation, and modern web
-          technologies.
+        <Typography
+          variant="body1"
+          color="text.secondary"
+          paragraph
+          sx={{ mb: 6, maxWidth: 800 }}
+        >
+          A multidisciplinary skill set bridging automation, software development, and infrastructure.  
+          I design connected, secure, and scalable systems — combining industrial engineering, embedded control, and modern cloud technologies.
         </Typography>
 
         <Grid container spacing={4}>
           {skillCategories.map((category, index) => (
-            <Grid  size={12} sx={{md: 6}} key={index}>
+            <Grid size={12} sx={{ md: 6 }} key={index}>
               <Paper
                 sx={{
                   p: 4,
