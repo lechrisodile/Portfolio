@@ -10,13 +10,13 @@ export function Hero() {
     <Box
       id="hero"
       sx={{
-        minHeight: "100vh",
+        minHeight: "50vh",
         display: "flex",
         alignItems: "center",
         pt: { xs: 12, md: 8 },
       }}
     >
-      <Container maxWidth="lg">
+      <Container maxWidth="lg"> 
         <Grid container spacing={4} alignItems="center">
           <Grid  size={12} sx={{md: 8}}>
             <Typography
@@ -36,7 +36,7 @@ export function Hero() {
             <Typography variant="h3" color="text.secondary" gutterBottom sx={{ mb: 3 }}>
               Building the future of industrial technology
             </Typography>
-            <Typography variant="body1" color="text.secondary" paragraph sx={{ maxWidth: 600, mb: 4 }}>
+            <Typography variant="body1" color="text.secondary"  sx={{ maxWidth: 600, mb: 4 }}>
               Third-year Industrial IT student graduating this year, passionate about bridging the gap between
               industrial systems and modern technology. Specializing in automation, IoT, and software development.
             </Typography>
