@@ -1,18 +1,28 @@
 "use client"
 
-import { IconButton, Box, Typography, Link } from "@mui/material"
-import { Brightness4, Brightness7 } from "@mui/icons-material"
+import { useState } from "react"
+import { IconButton, Box, Typography, Link, Drawer, useMediaQuery } from "@mui/material"
+import { Brightness4, Brightness7, Menu, Close } from "@mui/icons-material"
 import { useTheme } from "./theme-provider"
 
 export function Navigation() {
   const { darkMode, toggleDarkMode } = useTheme()
+  const [openMenu, setOpenMenu] = useState(false)
+  const isMobile = useMediaQuery("(max-width:650px)")
 
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId)
     if (element) {
       element.scrollIntoView({ behavior: "smooth" })
+      setOpenMenu(false)
     }
   }
+
+  const navLinks = [
+    { label: "À propos", id: "about" },
+    { label: "Compétences", id: "skills" },
+    { label: "Contact", id: "contact" },
+  ]
 
   return (
     <Box
@@ -25,9 +35,8 @@ export function Navigation() {
         padding: "1rem 2rem",
         backdropFilter: "blur(10px)",
         borderBottom: "1px solid",
-        transition: "all 0.3s ease",
-        backgroundColor: darkMode ? "rgba(26, 26, 46, 0.8)" : "rgba(245, 245, 245, 0.8)",
-        borderBottomColor: darkMode ? "rgba(255, 255, 255, 0.1)" : "rgba(0, 0, 0, 0.1)",
+        backgroundColor: darkMode ? "rgba(26,26,46,0.8)" : "rgba(245,245,245,0.8)",
+        borderBottomColor: darkMode ? "rgba(255,255,255,0.1)" : "rgba(0,0,0,0.1)",
       }}
     >
       <Box
@@ -39,89 +48,104 @@ export function Navigation() {
           margin: "0 auto",
         }}
       >
+        {/* Logo / Nom */}
         <Typography
           sx={{
             fontSize: "1.5rem",
             fontWeight: 700,
             letterSpacing: "-0.02em",
             cursor: "pointer",
-            transition: "color 0.3s ease",
             color: darkMode ? "#e0e0e0" : "#2c3e50",
-            "&:hover": {
-              color: darkMode ? "#7c3aed" : "#2563eb",
-            },
+            "&:hover": { color: darkMode ? "#7c3aed" : "#2563eb" },
           }}
           onClick={() => scrollToSection("hero")}
         >
-          Votre Nom
+          Tchayep Christan
         </Typography>
 
-        <Box
-          sx={{
-            display: "flex",
-            gap: "2rem",
-            alignItems: "center",
-          }}
-        >
-          <Link
-            component="button"
-            onClick={() => scrollToSection("about")}
-            sx={{
-              fontSize: "0.95rem",
-              fontWeight: 500,
-              cursor: "pointer",
-              transition: "color 0.3s ease",
-              textDecoration: "none",
-              color: darkMode ? "#e0e0e0" : "#2c3e50",
-              "&:hover": {
-                color: darkMode ? "#7c3aed" : "#2563eb",
-              },
-            }}
-          >
-            À propos
-          </Link>
-          <Link
-            component="button"
-            onClick={() => scrollToSection("skills")}
-            sx={{
-              fontSize: "0.95rem",
-              fontWeight: 500,
-              cursor: "pointer",
-              transition: "color 0.3s ease",
-              textDecoration: "none",
-              color: darkMode ? "#e0e0e0" : "#2c3e50",
-              "&:hover": {
-                color: darkMode ? "#7c3aed" : "#2563eb",
-              },
-            }}
-          >
-            Compétences
-          </Link>
-          <Link
-            component="button"
-            onClick={() => scrollToSection("contact")}
-            sx={{
-              fontSize: "0.95rem",
-              fontWeight: 500,
-              cursor: "pointer",
-              transition: "color 0.3s ease",
-              textDecoration: "none",
-              color: darkMode ? "#e0e0e0" : "#2c3e50",
-              "&:hover": {
-                color: darkMode ? "#7c3aed" : "#2563eb",
-              },
-            }}
-          >
-            Contact
-          </Link>
-
-          <Box sx={{ marginLeft: "1rem" }}>
-            <IconButton onClick={toggleDarkMode} color="inherit" size="medium">
+        {!isMobile ? (
+          // Desktop
+          <Box sx={{ display: "flex", gap: "2rem", alignItems: "center" }}>
+            {navLinks.map((link) => (
+              <Link
+                key={link.id}
+                component="button"
+                onClick={() => scrollToSection(link.id)}
+                sx={{
+                  fontSize: "0.95rem",
+                  fontWeight: 500,
+                  cursor: "pointer",
+                  textDecoration: "none",
+                  color: darkMode ? "#e0e0e0" : "#2c3e50",
+                  "&:hover": { color: darkMode ? "#7c3aed" : "#2563eb" },
+                }}
+              >
+                {link.label}
+              </Link>
+            ))}
+            <IconButton onClick={toggleDarkMode} color="inherit">
               {darkMode ? <Brightness7 /> : <Brightness4 />}
             </IconButton>
           </Box>
-        </Box>
+        ) : (
+          // Mobile
+          <Box sx={{ display: "flex", alignItems: "center", gap: "0.5rem" }}>
+            <IconButton onClick={toggleDarkMode} color="inherit">
+              {darkMode ? <Brightness7 /> : <Brightness4 />}
+            </IconButton>
+            <IconButton onClick={() => setOpenMenu(true)} color="inherit">
+              <Menu />
+            </IconButton>
+          </Box>
+        )}
       </Box>
+
+      {/* Drawer mobile */}
+      <Drawer
+        anchor="right"
+        open={openMenu}
+        onClose={() => setOpenMenu(false)}
+        PaperProps={{
+           sx: {
+      width: "70%",           // largeur 70% écran
+      maxWidth: "300px",      // limite largeur max
+      height: "auto",         // hauteur automatique selon contenu
+      maxHeight: "90vh",      // jamais plus que 90% de l’écran
+      borderRadius: "8px 0 0 8px", // coins arrondis gauche
+      backgroundColor: darkMode ? "#1c1c2e" : "#fafafa",
+      padding: "1rem",
+    },
+        }}
+      >
+        <Box sx={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+          <Typography sx={{ fontWeight: 600, color: darkMode ? "#e0e0e0" : "#2c3e50" }}>
+            Menu
+          </Typography>
+          <IconButton onClick={() => setOpenMenu(false)}>
+            <Close sx={{ color: darkMode ? "#e0e0e0" : "#2c3e50" }} />
+          </IconButton>
+        </Box>
+
+        <Box sx={{ mt: 3, display: "flex", flexDirection: "column", gap: 2 }}>
+          {navLinks.map((link) => (
+            <Link
+              key={link.id}
+              component="button"
+              onClick={() => scrollToSection(link.id)}
+              sx={{
+                fontSize: "1.1rem",
+                fontWeight: 500,
+                cursor: "pointer",
+                textDecoration: "none",
+                color: darkMode ? "#e0e0e0" : "#2c3e50",
+                "&:hover": { color: darkMode ? "#7c3aed" : "#2563eb" },
+              }}
+            >
+              {link.label}
+            </Link>
+          ))}
+        </Box>
+      </Drawer>
     </Box>
   )
 }

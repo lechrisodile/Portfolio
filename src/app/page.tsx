@@ -1,3 +1,4 @@
+'use client'
 import Image from "next/image";
 import '@fontsource/roboto/300.css';
 import '@fontsource/roboto/400.css';
@@ -8,6 +9,7 @@ import { About } from "../components/about";
 import { Skills } from "../components/skills";
 import { Contact } from "../components/contact";
 import { Navigation } from "../components/navigation";
+import { use } from "react";
 
 export default function Home() {
   return (
