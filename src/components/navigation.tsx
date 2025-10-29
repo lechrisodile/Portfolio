@@ -49,19 +49,31 @@ export function Navigation() {
         }}
       >
         {/* Logo / Nom */}
-        <Typography
-          sx={{
-            fontSize: "1.5rem",
-            fontWeight: 700,
-            letterSpacing: "-0.02em",
-            cursor: "pointer",
-            color: darkMode ? "#e0e0e0" : "#2c3e50",
-            "&:hover": { color: darkMode ? "#7c3aed" : "#2563eb" },
-          }}
+        <Box
+          sx={{ display: "flex", alignItems: "center", cursor: "pointer" }}
           onClick={() => scrollToSection("hero")}
         >
-          Tchayep Christan
-        </Typography>
+          <Image
+            src="/logobg.png"
+            alt="Logo"
+            width={90}   // largeur du logo
+            height={90*(408/612)}  // hauteur du logo
+            priority
+          />
+          <Typography
+            sx={{
+              fontSize: "1.5rem",
+              fontWeight: 700,
+              letterSpacing: "-0.02em",
+              marginLeft: 1,   // espace entre logo et texte
+              color: darkMode ? "#e0e0e0" : "#2c3e50",
+              "&:hover": { color: darkMode ? "#7c3aed" : "#2563eb" },
+            }}
+          >
+             Christan Tchayep
+          </Typography>
+        </Box>
+
 
         {!isMobile ? (
           // Desktop
@@ -106,15 +118,15 @@ export function Navigation() {
         open={openMenu}
         onClose={() => setOpenMenu(false)}
         PaperProps={{
-           sx: {
-      width: "70%",           // largeur 70% écran
-      maxWidth: "300px",      // limite largeur max
-      height: "auto",         // hauteur automatique selon contenu
-      maxHeight: "90vh",      // jamais plus que 90% de l’écran
-      borderRadius: "8px 0 0 8px", // coins arrondis gauche
-      backgroundColor: darkMode ? "#1c1c2e" : "#fafafa",
-      padding: "1rem",
-    },
+          sx: {
+            width: "70%",           // largeur 70% écran
+            maxWidth: "300px",      // limite largeur max
+            height: "auto",         // hauteur automatique selon contenu
+            maxHeight: "90vh",      // jamais plus que 90% de l’écran
+            borderRadius: "8px 0 0 8px", // coins arrondis gauche
+            backgroundColor: darkMode ? "#1c1c2e" : "#fafafa",
+            padding: "1rem",
+          },
         }}
       >
         <Box sx={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>

@@ -98,24 +98,42 @@ export function Contact() {
           </Grid>
 
           <Grid size={12} sx={{ md: 6 }}>
-            <Paper sx={{ p: 4, height: "100%" }}>
+            <Paper sx={{ p: 4, height: "100%",  }}>
               <Typography variant="h5" gutterBottom sx={{ mb: 3 }}>
                 Connect With Me
               </Typography>
               <Box sx={{ display: "flex", flexDirection: "column", gap: 2 }}>
-                <Box sx={{ display: "flex", alignItems: "center", gap: 2 }}>
+                <Box sx={{ display: "flex", alignItems: "center", gap: 2,
+                  borderRadius: 1,
+                  transition: "all 0.18s ease",
+                  "&:hover": {
+                    backgroundColor: "action.hover",
+                    transform: "translateX(6px)",
+                    cursor: "pointer",
+                    "& .MuiSvgIcon-root": { color: "primary.main" },
+                  },
+                 }}>
                   <Email color="primary" />
 
                   <Typography>
                     <a
                       href="mailto:juniortchayep@outlook.com"
-                      style={{ textDecoration: "none", color: "inherit" }}
+                      style={{ textDecoration: "none", color: "inherit", }}
                     >
                       juniortchayep@outlook.com
                     </a>
                   </Typography>
                 </Box>
-                <Box sx={{ display: "flex", alignItems: "center", gap: 2 }}>
+                <Box sx={{ display: "flex", alignItems: "center", gap: 2,
+                  borderRadius: 1,
+                  transition: "all 0.18s ease",
+                  "&:hover": {
+                    backgroundColor: "action.hover",
+                    transform: "translateX(6px)",
+                    cursor: "pointer",
+                    "& .MuiSvgIcon-root": { color: "primary.main" },
+                  },
+                }}>
                   <LinkedIn color="primary" />
                   <Typography>
                     <a
@@ -129,7 +147,7 @@ export function Contact() {
                   </Typography>
                 </Box>
 
-                <Box sx={{ display: "flex", alignItems: "center", gap: 2 }}>
+                <Box sx={{ display: "flex", alignItems: "center", gap: 2, }}>
                   <Phone color="primary" />
                   <Typography>+32 488 933 809</Typography>
                 </Box>
