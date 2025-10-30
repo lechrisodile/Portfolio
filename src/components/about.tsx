@@ -51,12 +51,14 @@ export function About() {
         <Typography
           variant="body1"
           color="text.secondary"
-          paragraph
           sx={{ mb: 6, maxWidth: 800 }}
         >
-          Passionate about industrial technology and intelligent systems, I combine technical expertise with a
-          forward-thinking mindset to design efficient, connected, and sustainable solutions. My goal is to bridge
-          automation, software development, and artificial intelligence to shape the future of smart industry.
+          As an industrial IT student, I am passionate about intelligent systems, 
+          automation, and software engineering. My technical focus spans real-time data integration, 
+          IoT connectivity, and the use of modern development frameworks. I aim to build innovative
+           solutions that bridge technology and efficiency, 
+          allowing me to grow through collaborative and challenging projects.
+          
         </Typography>
 
         <Grid container spacing={4}>

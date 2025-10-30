@@ -16,9 +16,9 @@ export function Hero() {
         pt: { xs: 12, md: 8 },
       }}
     >
-      <Container maxWidth="lg"> 
+      <Container maxWidth="lg">
         <Grid container spacing={4} alignItems="center">
-          <Grid  size={12} sx={{md: 8}}>
+          <Grid size={12} sx={{ md: 8 }}>
             <Typography
               variant="h1"
               gutterBottom
@@ -34,11 +34,13 @@ export function Hero() {
               Industrial IT Student
             </Typography>
             <Typography variant="h3" color="text.secondary" gutterBottom sx={{ mb: 3 }}>
-              Building the future of industrial technology
+              Shaping the future of connected technology
             </Typography>
-            <Typography variant="body1" color="text.secondary"  sx={{ maxWidth: 600, mb: 4 }}>
-              Third-year Industrial IT student graduating this year, passionate about bridging the gap between
-              industrial systems and modern technology. Specializing in automation, IoT, and software development.
+            <Typography variant="body1" color="text.secondary" sx={{ maxWidth: 600, mb: 4 }}>
+              Curious and driven by a passion for innovation, I constantly seek to expand
+              my knowledge and skills in the field of Industrial IT.
+              I embrace each challenge as an opportunity to grow and
+              explore new frontiers in IT and automation.
             </Typography>
             <Box sx={{ display: "flex", gap: 2 }}>
               <Button variant="contained" size="large" href="#contact">
