@@ -57,7 +57,7 @@ export function Navigation() {
             src="/logobg.png"
             alt="Logo"
             width={90}   // largeur du logo
-            height={90*(408/612)}  // hauteur du logo
+            height={90 * (408 / 612)}  // hauteur du logo
             priority
           />
           <Typography
@@ -70,7 +70,7 @@ export function Navigation() {
               "&:hover": { color: darkMode ? "#7c3aed" : "#2563eb" },
             }}
           >
-             Christan Tchayep
+            Christan Tchayep
           </Typography>
         </Box>
 
@@ -117,16 +117,14 @@ export function Navigation() {
         anchor="right"
         open={openMenu}
         onClose={() => setOpenMenu(false)}
-        PaperProps={{
-          sx: {
-            width: "70%",           // largeur 70% écran
-            maxWidth: "300px",      // limite largeur max
-            height: "auto",         // hauteur automatique selon contenu
-            maxHeight: "90vh",      // jamais plus que 90% de l’écran
-            borderRadius: "8px 0 0 8px", // coins arrondis gauche
-            backgroundColor: darkMode ? "#1c1c2e" : "#fafafa",
-            padding: "1rem",
-          },
+        sx={{
+          width: "70%",           // largeur 70% écran
+          maxWidth: "300px",      // limite largeur max
+          height: "auto",         // hauteur automatique selon contenu
+          maxHeight: "90vh",      // jamais plus que 90% de l’écran
+          borderRadius: "8px 0 0 8px", // coins arrondis gauche
+          backgroundColor: darkMode ? "#1c1c2e" : "#fafafa",
+          padding: "1rem",
         }}
       >
         <Box sx={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>

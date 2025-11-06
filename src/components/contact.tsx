@@ -17,8 +17,6 @@ export function Contact() {
   e.preventDefault();
 
   const { name, email, message } = formData;
-
-  // Crée le mailto link
   const mailtoLink = `mailto:juniortchayep@outlook.com?subject=Contact from ${encodeURIComponent(
     name
   )}&body=${encodeURIComponent(message + "\n\nFrom: " + email)}`;
