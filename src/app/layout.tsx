@@ -7,6 +7,9 @@ import "../styles/navigation.styles.ts"
 const _geist = Geist({ subsets: ["latin"] })
 const _geistMono = Geist_Mono({ subsets: ["latin"] })
 
+// Utilise la className retournée sur <html> ou <body>
+export const fontClasses = `${_geist.className} ${_geistMono.className}`
+
 export const metadata: Metadata = {
   title: "Industrial IT Portfolio - Christan T.",
   description: "Portfolio of a third-year Industrial IT student",
@@ -18,7 +21,7 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" className={fontClasses}>
       <body className={`font-sans antialiased`}>
         <ThemeProvider>{children}</ThemeProvider>
       </body>

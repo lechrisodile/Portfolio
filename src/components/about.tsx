@@ -1,91 +1,105 @@
 "use client"
-
-import { Box, Container, Typography, Grid, Card, CardContent } from "@mui/material"
-import { School, Code, Engineering, Memory,Smartphone, Language, Security, Cloud, Terminal } from "@mui/icons-material"
+import { Box, Container, Typography, Grid, Paper } from '@mui/material'
+import { useTheme } from '@mui/material/styles'
 
 export function About() {
-  const highlights = [
-  {
-    icon: <School sx={{ fontSize: 40 }} />,
-    title: "Education",
-    description:
-      "Industrial IT student passionate about automation and Industry 4.0. Always learning how to bridge industrial systems with modern software technologies.",
-  },
-  {
-    icon: <Terminal sx={{ fontSize: 40 }} />,
-    title: "Software & System Integration",
-    description:
-      "I love connecting the digital and physical worlds — from designing automation logic to building software that communicates with industrial hardware.",
-  },
-  {
-    icon: <Cloud sx={{ fontSize: 40 }} />,
-    title: "Full-Stack & Cloud Development",
-    description:
-      "I design clean, efficient web and mobile solutions using modern stacks like Next.js and React Native, often deployed on secure, cloud-based infrastructures.",
-  },
-  {
-    icon: <Engineering sx={{ fontSize: 40 }} />,
-    title: "Innovation & Automation",
-    description:
-      "Keen on developing intelligent, autonomous systems that combine sensors, control logic, and data analysis to optimize industrial processes.",
-  },
-]
-
+  const theme = useTheme()
+  const isDark = theme.palette.mode === 'dark'
 
   return (
     <Box
       id="about"
       sx={{
-        minHeight: "100vh",
-        display: "flex",
-        alignItems: "center",
-        py: 8,
-        scrollMarginTop: "80px",
+        paddingY: 8,
       }}
     >
-      <Container maxWidth="lg">
-        <Typography variant="h2" gutterBottom sx={{ mb: 2 }}>
+      <Container maxWidth="md">
+        <Typography
+          variant="h2"
+          sx={{
+            fontWeight: 800,
+            marginBottom: 4,
+            color: isDark ? "#64b5f6": " #1784deff",
+            textAlign: 'center',
+          }}
+        >
           About Me
         </Typography>
 
-        <Typography
-          variant="body1"
-          color="text.secondary"
-          sx={{ mb: 6, maxWidth: 800 }}
-        >
-          As an industrial IT student, I am passionate about intelligent systems, 
-          automation, and software engineering. My technical focus spans real-time data integration, 
-          IoT connectivity, and the use of modern development frameworks. I aim to build innovative
-           solutions that bridge technology and efficiency, 
-          allowing me to grow through collaborative and challenging projects.
-          
-        </Typography>
+        <Grid container spacing={4} sx={{ marginBottom: 6 }}>
+          <Grid size = {{ xs: 12 }}>
+            <Typography
+              variant="body1"
+              sx={{
+                color: isDark ? '#d0d0d0' : '#333333',
+                marginBottom: 2,
+                lineHeight: 1.8,
+                fontSize: '1.1rem',
+                textAlign: 'justify',
+              }}
+            >
+              I’m Christan Tchayep, a 22-year-old industrial computing student. I was born in Cameroon and have lived in Belgium since 2022.
+               {/* Growing up in the early 2000s computer era, I started exploring the realms of Windows 95 and XP.
+                */}
+            </Typography>
 
-        <Grid container spacing={4}>
-          {highlights.map((item, index) => (
-            <Grid size={12} sx={{ md: 4 }} key={index}>
-              <Card
-                sx={{
-                  height: "100%",
-                  transition: "transform 0.2s, box-shadow 0.2s",
-                  "&:hover": {
-                    transform: "translateY(-8px)",
-                    boxShadow: 6,
-                  },
-                }}
-              >
-                <CardContent sx={{ p: 4 }}>
-                  <Box sx={{ color: "primary.main", mb: 2 }}>{item.icon}</Box>
-                  <Typography variant="h5" gutterBottom>
-                    {item.title}
-                  </Typography>
-                  <Typography variant="body1" color="text.secondary">
-                    {item.description}
-                  </Typography>
-                </CardContent>
-              </Card>
-            </Grid>
-          ))}
+            <Typography
+              variant="body1"
+              sx={{
+                color: isDark ? '#d0d0d0' : '#333333',
+                lineHeight: 1.8,
+                fontSize: '1.1rem',
+                textAlign: 'justify',
+              }}
+            >
+              Before starting my bachelor’s degree, I taught myself video editing, one of my hobbies, and began working as a freelance video editor in my free time. This early experience helped me develop the qualities that define me most today: patience, entrepreneurship, self-learning, and communication.
+            </Typography>
+
+            <br />
+
+            <Typography
+              variant="body1"
+              sx={{
+                color: isDark ? '#d0d0d0' : '#333333',
+                lineHeight: 1.8,
+                fontSize: '1.1rem',
+                textAlign: 'justify',
+              }}
+            >
+
+              My first bachelor’s degree at HELHa Mons sparked my curiosity for clean code practices and software architecture. My end-of-studies internship at Aproove further expanded my belief that code should be written first for other developers, and that architecture should limit or eliminate technical debt.
+            </Typography>
+
+
+            <br />
+
+            <Typography
+              variant="body1"
+              sx={{
+                color: isDark ? '#d0d0d0' : '#333333',
+                lineHeight: 1.8,
+                fontSize: '1.1rem',
+                textAlign: 'justify',
+              }}
+            >
+              My love for software and hardware led me to pursue a second bachelor’s degree in Industrial Computing at HELHa Charleroi. These studies have given me a deeper understanding of how our connected world works.
+            </Typography>
+
+            <br />
+
+            <Typography
+              variant="body1"
+              sx={{
+                color: isDark ? '#d0d0d0' : '#333333',
+                lineHeight: 1.8,
+                fontSize: '1.1rem',
+                textAlign: 'justify',
+              }}
+            >
+              These studies and experiences have given me a strong foundation to tackle tomorrow’s world and its challenges. My new goal is to gain what I’m missing: real years of experience inside a tech company.
+            </Typography>
+
+          </Grid>
         </Grid>
       </Container>
     </Box>

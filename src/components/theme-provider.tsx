@@ -27,8 +27,8 @@ export default function ThemeProvider({ children }: { children: React.ReactNode 
         main: darkMode ? "#4dd0e1" : "#0097a7",
       },
       background: {
-        default: darkMode ? "#1a1a2e" : "#f5f5f5",
-        paper: darkMode ? "#252538" : "#e8e8e8",
+        default: darkMode ? "#1a1a2e" : "#ffffff",
+        paper: darkMode ? "#252538" : "#ffffff",
       },
       text: {
         primary: darkMode ? "#e0e0e0" : "#2c3e50",
@@ -65,6 +65,7 @@ export default function ThemeProvider({ children }: { children: React.ReactNode 
     shape: {
       borderRadius: 12,
     },
+    
   })
 
   const toggleDarkMode = () => setDarkMode(!darkMode)

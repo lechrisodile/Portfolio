@@ -1,4 +1,4 @@
-export const navigationStyles = {
+ const navigationStyles = {
   navbar: {
     position: "fixed" as const,
     top: 0,

@@ -12,8 +12,12 @@
     "@emotion/react": "^11.14.0",
     "@emotion/styled": "^11.14.1",
     "@fontsource/roboto": "^5.2.8",
+    "@mantine/core": "^8.3.9",
+    "@mantine/hooks": "^8.3.9",
+    "@mantine/styles": "^6.0.22",
     "@mui/icons-material": "^7.3.4",
     "@mui/material": "^7.3.4",
+    "country-flag-icons": "^1.6.4",
     "next": "16.0.1",
     "react": "19.2.0",
     "react-dom": "19.2.0"
