@@ -28,7 +28,6 @@ export function SkillsSection() {
       "Python",
       "Java",,
       "C",
-      "C#",
       "C++",
       "React",
       "Node.js",

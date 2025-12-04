@@ -14,11 +14,11 @@ export function AchievementsSection() {
     >
       <Container maxWidth="lg" sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
         <Typography
-          variant="h3"
+          variant="h2"
           sx={{
             fontWeight: 800,
             marginBottom: 4,
-            color: isDark ? '#ffffff' : '#000000',
+            color: isDark ? "#64b5f6": " #1784deff",
             textAlign: 'center',
           }}
         >
@@ -85,7 +85,7 @@ export function AchievementsSection() {
                 alt="WorldSkills Industry 4.0 Championship"
                 sx={{
                   width: '100%',
-                  height: 150,
+                  height: 200,
                   objectFit: 'cover',
                   borderRadius: 1,
                   marginBottom: 2,
@@ -161,11 +161,11 @@ export function AchievementsSection() {
               {/* Image banner */}
               <Box
                 component="img"
-                src="images/hackathon.png"
+                src="images/mic1.png"
                 alt="Hackathon AI for GOOD"
                 sx={{
                   width: '100%',
-                  height: 150,
+                  height: 200,
                   objectFit: 'cover',
                   borderRadius: 1,
                   marginBottom: 2,

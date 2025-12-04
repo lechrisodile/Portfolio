@@ -7,14 +7,23 @@ export function EducationSection() {
 
   const education = [
     {
-  "degree": "Bachelor in Industrial Computing (Systems and Networks)",
-  "school": "Haute École Louvain en Hainaut",
-  "status": "Current",
-  "date": "2022 - 2026",
-  "photo": "images/helha.png",
-  "description": "Focused on electronics and automation, with a strong emphasis on networks and cybersecurity. The program bridges operational technology (OT) and information technology (IT), preparing me to work at the intersection of both worlds."
+      "degree": "Bachelor in Industrial Computing (Systems and Networks)",
+      "school": "Haute École Louvain en Hainaut",
+      "status": "Current",
+      "date": "2023 - 2026",
+      "photo": "images/helha.png",
+      "description": "Focused on electronics and automation, with a strong emphasis on networks and cybersecurity. The program bridges operational technology (OT) and information technology (IT), preparing me to work at the intersection of both worlds."
     },
-    
+    {
+      "degree": "First-Year Physics",
+      "school": "University of Yaoundé I",
+      "status": "Winter 2023",
+      "date": "2022 - 2023",
+      "photo": "images/Yaounde1.png",
+      "description": "Introduction to foundational physics with exposure to electronics and basic automation concepts. The curriculum strengthens analytical skills and prepares for further studies in scientific and technological fields."
+    },
+
+
   ]
 
   return (
@@ -30,7 +39,7 @@ export function EducationSection() {
           sx={{
             fontWeight: 800,
             marginBottom: 4,
-            color: isDark ? "#64b5f6": " #1784deff",
+            color: isDark ? "#64b5f6" : " #1784deff",
             textAlign: 'center',
           }}
         >

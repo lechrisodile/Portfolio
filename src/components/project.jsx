@@ -19,20 +19,39 @@ export function ProjectsSection() {
       type: 'school', // professional or school
       inProduction: false,
       description: 'In my second year at HELHa Charleroi, I was tasked with building an automated warehouse system. A camera would scan AprilTags on items inside the frame of a 3D printer, and the stock is displayed on a web application and a small display directly on the frame. Users can order items from a keypad on the frame or the website, and the arm of the frame picks and places the items into a delivery zone.',
-      techStack: ['Next JS', 'Node.js', 'MySQL', 'Microcontrollers', 'SSE', "Embedded systems"],
+      techStack: ['Next JS', 'Node.js', 'MySQL', 'Microcontrollers', "Embedded systems"],
       githubUrl: '',
       liveUrl: '',
       images: ['images/projet2.png']
     },
     {
-      title: 'Dice game with K8055 card',
-      type: 'school', // professional or school
+      title: 'Guessing Game – P8055 Board',
+      type: 'school',
       inProduction: false,
-      description: 'In my first year at HELHa Charleroi, I was tasked with building an automated warehouse system. A camera would scan AprilTags on items inside the frame of a 3D printer, and the stock is displayed on a web application and a small display directly on the frame. Users can order items from a keypad on the frame or the website, and the arm of the frame picks and places the items into a delivery zone.',
-      techStack: ['C', 'Microcontrollers',],
+      description: 'Development of an interactive mini-game using the P8055 acquisition board (Velleman). The application generates a random number between 0 and 255. The player adjusts the value of the ATT1 potentiometer and submits their attempt. At startup, all digital LEDs are activated while the analog LEDs remain off. The project combines analog input handling, digital output control, and game logic implemented in VB.NET.',
+      techStack: ['VB.NET', 'Visual Studio', 'P8055 Board'],
       githubUrl: '',
       liveUrl: '',
-      images: ['images/projet2.png']
+      images: ['images/interface-com.png']
+    },
+
+    {
+      title: 'Electronic Dice Game',
+      type: 'school', // professional or school
+      inProduction: false,
+      description: 'Development of a dual-dice electronic system using LED matrices, driven by a Velleman PVM1001N interface board. The setup emulates a real dice roll by generating random LED patterns. The PVM1001N manages the digital I/O and links the hardware to a C application running on a computer. The user triggers the roll and reads the result through the software, which operates as a small video game where the electronic dice output directly affects the gameplay.',
+
+      techStack: ['C',
+        'Microcontrollers',
+        'Embedded Systems',
+        'Digital Electronics',
+        'Serial Communication',
+        'LED Matrix Control',
+        'GANTT',
+        'PERT'],
+      githubUrl: '',
+      liveUrl: '',
+      images: ['images/projet1.png'],
     },
   ]
 
@@ -120,11 +139,11 @@ export function ProjectsSection() {
     >
       <Container maxWidth="lg">
         <Typography
-          variant="h3"
+          variant="h2"
           sx={{
             fontWeight: 800,
             marginBottom: 4,
-            color: isDark ? '#ffffff' : '#000000',
+            color: isDark ? "#64b5f6" : " #1784deff",
             textAlign: 'center',
           }}
         >
@@ -194,49 +213,7 @@ export function ProjectsSection() {
                         {project.title}
                       </Typography>
                     </Box>
-                    <Box sx={{ display: 'flex', gap: 1 }}>
-                      {project.liveUrl ? (
-                        <IconButton
-                          component="a"
-                          href={project.liveUrl}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          aria-label={`${project.title} live site`}
-                          sx={{
-                            backgroundColor: isDark ? 'rgba(255,255,255,0.04)' : 'rgba(0,0,0,0.04)',
-                            color: isDark ? '#ffffff' : '#000000',
-                            '&:hover': { backgroundColor: isDark ? 'rgba(255,255,255,0.08)' : 'rgba(0,0,0,0.08)' },
-                          }}
-                        >
-                          <LanguageIcon />
-                        </IconButton>
-                      ) : (
-                        <IconButton disabled aria-label="live site not available" sx={{ opacity: 0.4 }}>
-                          <LanguageIcon />
-                        </IconButton>
-                      )}
 
-                      {project.githubUrl ? (
-                        <IconButton
-                          component="a"
-                          href={project.githubUrl}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          aria-label={`${project.title} GitHub repository`}
-                          sx={{
-                            backgroundColor: isDark ? 'rgba(255,255,255,0.04)' : 'rgba(0,0,0,0.04)',
-                            color: isDark ? '#ffffff' : '#000000',
-                            '&:hover': { backgroundColor: isDark ? 'rgba(255,255,255,0.08)' : 'rgba(0,0,0,0.08)' },
-                          }}
-                        >
-                          <GitHubIcon />
-                        </IconButton>
-                      ) : (
-                        <IconButton disabled aria-label="GitHub not available" sx={{ opacity: 0.4 }}>
-                          <GitHubIcon />
-                        </IconButton>
-                      )}
-                    </Box>
                   </Box>
                   <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 1, marginBottom: 2 }}>
                     {project.techStack.map((tech, techIndex) => (

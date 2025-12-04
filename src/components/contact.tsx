@@ -64,11 +64,11 @@ export function Contact() {
 
         <Box sx={{ textAlign: 'center', marginBottom: 6 }}>
           <Typography
-            variant="h3"
+            variant="h2"
             sx={{
               fontWeight: 800,
               marginBottom: 2,
-              color: isDark ? '#ffffff' : '#000000',
+              color: isDark ? '#64b5f6' : '#1784deff',
               fontSize: { xs: '1.8rem', sm: '2.5rem', md: '2.75rem' },
             }}
           >
