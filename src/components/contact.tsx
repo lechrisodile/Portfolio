@@ -144,7 +144,7 @@ export function Contact() {
                 >
                   <IconComponent
                     sx={{
-                      color: isDark ? '#ffffff' : '#000000',
+                      color: isDark ? '#ffffff' : '#32a4ecc6',
                       fontSize: '1.25rem',
                     }}
                   />
@@ -165,7 +165,7 @@ export function Contact() {
                     variant="body2"
                     sx={{
                       fontWeight: 600,
-                      color: isDark ? '#ffffff' : '#000000',
+                      color: isDark ? '#ffffff' : '#000000ff',
                       fontSize: { xs: '0.85rem', sm: '0.95rem' },
                       wordBreak: 'break-word',
                     }}

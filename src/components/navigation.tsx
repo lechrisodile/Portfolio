@@ -21,6 +21,8 @@ export function Navigation() {
   const navLinks = [
     { label: "About Me", id: "about" },
     { label: "Skills", id: "skills" },
+    { label: "Education", id: "education" },
+    { label: "Projects", id: "projects" },
     { label: "Contact", id: "contact" },
   ]
 
@@ -53,13 +55,13 @@ export function Navigation() {
           sx={{ display: "flex", alignItems: "center", cursor: "pointer" }}
           onClick={() => scrollToSection("hero")}
         >
-          <Image
+          {/* <Image
             src="/logobg.png"
             alt="Logo"
             width={90}   // largeur du logo
             height={90 * (408 / 612)}  // hauteur du logo
             priority
-          />
+          /> */}
           <Typography
             sx={{
               fontSize: "1.5rem",
@@ -77,7 +79,7 @@ export function Navigation() {
 
         {!isMobile ? (
           // Desktop
-          <Box sx={{ display: "flex", gap: "2rem", alignItems: "center" }}>
+          <Box sx={{ display: "flex", gap: 1, alignItems: "center" }}>
             {navLinks.map((link) => (
               <Link
                 key={link.id}

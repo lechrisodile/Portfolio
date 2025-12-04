@@ -7,7 +7,8 @@ import { Navigation } from "../components/navigation";
 import { ProjectsSection } from "../components/project";
 import { AchievementsSection } from "../components/achievements";
 import { EducationSection } from "../components/EducationSection";
-
+// import { Education } from "../components/education";
+import Education from "../components/education";
 
 export default function Home() {
   return (
@@ -22,6 +23,7 @@ export default function Home() {
         < AchievementsSection />
         <ProjectsSection />
         <Contact />
+        < Education />
       </main>
     </div>
   )

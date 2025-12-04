@@ -22,7 +22,7 @@ export function AchievementsSection() {
             textAlign: 'center',
           }}
         >
-          Achievements & notable experiences
+          Achievements & Notable Experiences
         </Typography>
 
         <Grid container spacing={3} sx={{ justifyContent: 'center', maxWidth: 1200, alignItems: 'stretch' }}>

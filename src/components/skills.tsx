@@ -205,27 +205,14 @@ export function SkillsSection() {
                         </Typography>
                       </Box>
                       <Typography
-                        variant="body2"
+                        variant="body1"
                         sx={{
-                          color: isDark ? '#808080' : '#999999',
+                          color: isDark ? '#808080' : '#353837f6',
                         }}
                       >
-                        {lang.level}
+                        {lang.level} 
                       </Typography>
                     </Box>
-                    <LinearProgress
-                      variant="determinate"
-                      value={lang.value}
-                      sx={{
-                        height: 8,
-                        borderRadius: 4,
-                        backgroundColor: isDark ? 'rgba(255, 255, 255, 0.1)' : 'rgba(0, 0, 0, 0.1)',
-                        '& .MuiLinearProgress-bar': {
-                          backgroundColor: isDark ? '#ffffff' : '#000000',
-                          borderRadius: 4,
-                        },
-                      }}
-                    />
                   </Paper>
                 </Box>
               )

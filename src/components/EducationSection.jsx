@@ -17,11 +17,13 @@ export function EducationSection() {
     {
       "degree": "First-Year Physics",
       "school": "University of Yaoundé I",
-      "status": "Winter 2023",
+      "status": "Completed",
       "date": "2022 - 2023",
       "photo": "images/Yaounde1.png",
-      "description": "Introduction to foundational physics with exposure to electronics and basic automation concepts. The curriculum strengthens analytical skills and prepares for further studies in scientific and technological fields."
-    },
+      "description": "Foundation year centered on core scientific disciplines such as mechanics, optics, general physics, chemistry, and applied mathematics. The program blends theory and laboratory work, building strong analytical and experimental skills while preparing for advanced studies in physics, engineering, and scientific technologies."
+    }
+
+
 
 
   ]
