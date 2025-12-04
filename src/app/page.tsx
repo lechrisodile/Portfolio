@@ -23,7 +23,7 @@ export default function Home() {
         < AchievementsSection />
         <ProjectsSection />
         <Contact />
-        < Education />
+        
       </main>
     </div>
   )
