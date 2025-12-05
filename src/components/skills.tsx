@@ -1,9 +1,16 @@
-import { Box, Container, Typography, Grid, Paper, LinearProgress } from '@mui/material'
-import { useTheme } from '@mui/material/styles'
-import { FR, RO, GB, NL } from 'country-flag-icons/react/3x2'
+import { Box, Container, Typography, Grid, Paper, Chip } from '@mui/material'
+import { useTheme, alpha } from '@mui/material/styles'
+import { FR, GB } from 'country-flag-icons/react/3x2'
+
+// Import des icônes pour embellir les titres
+import PrecisionManufacturingIcon from '@mui/icons-material/PrecisionManufacturing';
+import CodeIcon from '@mui/icons-material/Code';
+import StorageIcon from '@mui/icons-material/Storage';
+import GroupsIcon from '@mui/icons-material/Groups';
 
 export function SkillsSection() {
   const theme = useTheme()
+  // Détection simplifiée du mode
   const isDark = theme.palette.mode === 'dark'
 
   const skills = {
@@ -20,13 +27,12 @@ export function SkillsSection() {
       "PID Control regulation",
       "MES 403 / MES4.0",
       "CIROS",
-
     ],
     programming: [
       "JavaScript",
       "TypeScript",
       "Python",
-      "Java",,
+      "Java",
       "C",
       "C++",
       "React",
@@ -47,177 +53,183 @@ export function SkillsSection() {
       "Prisma",
       "Radius Servers",
     ],
-    // management: [
-    //   "Git",
-    //   "Gantt"
-    // ],
     professional: [
       "Adaptability",
       "Communication",
       "Teamwork",
       "Patience",
+      "Problem Solving"
     ]
   }
 
   const skillCategories = [
-    { title: 'Industrial Computing', skills: skills.industrial },
-    { title: 'Programming & Frameworks', skills: skills.programming },
-    { title: 'Databases & Infrastructure', skills: skills.infrastructure },
-    // { title: 'Project Management', skills: skills.management },
-    { title: 'Soft Skills', skills: skills.professional, isProfessional: true },
+    {
+      title: 'Industrial Computing',
+      skills: skills.industrial,
+      icon: <PrecisionManufacturingIcon color="primary" />,
+      color: theme.palette.primary.main
+    },
+    {
+      title: 'Programming & Frameworks',
+      skills: skills.programming,
+      icon: <CodeIcon color="secondary" />,
+      color: theme.palette.secondary.main
+    },
+    {
+      title: 'Databases & Infrastructure',
+      skills: skills.infrastructure,
+      icon: <StorageIcon color="info" />,
+      color: theme.palette.info.main
+    },
+    {
+      title: 'Soft Skills',
+      skills: skills.professional,
+      icon: <GroupsIcon color="success" />,
+      color: theme.palette.success.main,
+      isProfessional: true
+    },
   ]
 
   const languages = [
-    { name: 'French', flag: FR, level: 'Native', value: 100 },
-    { name: 'English', flag: GB, level: 'Basic (A1)', value: 25 },
+    { name: 'French', flag: FR, level: 'Native' },
+    { name: 'English', flag: GB, level: 'Basic (A1)' },
   ]
 
   return (
     <Box
       id="skills"
       sx={{
+        py: { xs: 8, md: 12 },
+        backgroundColor: "background.default",
         display: 'flex',
-        alignItems: 'center',
+        flexDirection: 'column',
         justifyContent: 'center',
-        minHeight: '60vh',
-        boxSizing: 'border-box',
       }}
     >
-      <Container maxWidth="md" sx={{ height: '100%', display: 'flex', flexDirection: 'column', justifyContent: 'center', py: 8 }}>
-        <Typography
-          variant="h2"
-          sx={{
-            fontWeight: 800,
-            marginBottom: 4,
-            color: isDark ?"#64b5f6": " #1784deff",
-            textAlign: 'center',
-          }}
-        >
-          Soft and Hard Skills
-        </Typography>
+      <Container maxWidth="lg">
+        {/* En-tête de section */}
+        <Box sx={{ mb: 8, textAlign: "center" }}>
+          <Typography
+            variant="h2"
+            sx={{
+              color: "primary.main",
+              fontWeight: 800,
+              mt: 1,
+              mb: 2,
+              // Utilisation d'un gradient pour le texte (optionnel, moderne)
+              background: isDark
+                ? `linear-gradient(45deg, #90caf9 30%, #ce93d8 90%)`
+                : `linear-gradient(45deg, #1976d2 30%, #9c27b0 90%)`,
+              WebkitBackgroundClip: "text",
+              WebkitTextFillColor: "transparent",
+            }}
+          >
+            Soft & Hard Skills
+          </Typography>
+        </Box>
 
-        <Grid container spacing={4} sx={{ marginBottom: 8, alignItems: 'stretch', justifyContent: 'center' }}>
+        {/* Grille principale des compétences */}
+        <Grid container spacing={4} alignItems="stretch">
           {skillCategories.map((category, index) => (
-            <Grid key={index}>
-              <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'stretch', justifyContent: 'flex-start', height: '100%', padding: { xs: 1, sm: 2 } }}>
-                <Typography
-                  variant="h1"
-                  sx={{
-                    fontWeight: 700,
-                    marginBottom: 2,
-                    color: isDark ? '#ffffff' : '#000000',
-                    textAlign: 'center',
-                    fontSize: { xs: '1rem', sm: '1.25rem', md: '1.5rem' },
-                  }}
-                >
-                  {category.title}
-                </Typography>
-                <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: { xs: 1, sm: 1.5 }, justifyContent: 'center' }}>
+            <Grid size={{ xs: 12, md: 6 }} key={index} sx={{ display: 'flex' }}>
+              <Paper
+                elevation={isDark ? 2 : 1}
+                sx={{
+                  p: 3,
+                  width: '100%',
+                  borderRadius: 4,
+                  // Effet de bordure subtil
+                  border: `1px solid ${alpha(category.color, 0.2)}`,
+                  backgroundColor: isDark ? alpha(category.color, 0.05) : '#fff',
+                  transition: 'transform 0.2s ease-in-out, box-shadow 0.2s',
+
+                }}
+              >
+                {/* Titre de la carte avec Icône */}
+                <Box sx={{ display: 'flex', alignItems: 'center', gap: 2, mb: 3, pb: 2, borderBottom: `1px solid ${theme.palette.divider}` }}>
+                  {category.icon}
+                  <Typography variant="h6" fontWeight={700}>
+                    {category.title}
+                  </Typography>
+                </Box>
+
+                {/* Liste des Chips */}
+                <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 1 }}>
                   {category.skills
-                    .slice() // don't mutate original
-                    .sort((a : any, b : any) => a.toLowerCase().localeCompare(b.toLowerCase()))
+                    .slice()
+                    .sort((a, b) => a.localeCompare(b))
                     .map((skill) => (
-                      <Paper
+                      <Chip
                         key={skill}
+                        label={skill}
+                        variant={category.isProfessional ? "filled" : "outlined"}
                         sx={{
-                          padding: { xs: '6px 10px', sm: '8px 12px' },
-                          backgroundColor: category.isProfessional
-                            ? isDark ? '#ffffff' : '#10154b29'
-                            : isDark ? 'rgba(169, 33, 33, 0.1)' : 'rgba(0, 0, 0, 0.05)',
-                          color: category.isProfessional
-                            ? isDark ? '#000000' : '#0e0e0eff'
-                            : isDark ? '#ffffff' : '#090d10ff',
-                          border: `1px solid ${isDark ? 'rgba(255, 255, 255, 0.2)' : 'rgba(34, 90, 243, 0.51)'}`,
-                          borderRadius: '10px',
                           fontWeight: 500,
+                          fontSize: '0.85rem',
+                          borderColor: alpha(category.color, 0.3),
+                          color: isDark ? 'text.primary' : 'text.dark',
+                          bgcolor: category.isProfessional
+                            ? alpha(category.color, 0.1)
+                            : 'transparent',
                         }}
-                      >
-                        <Typography variant="body2" sx={{ fontWeight: 500, fontSize: { xs: '0.8rem', sm: '0.875rem' } }}>
-                          {skill}
-                        </Typography>
-                      </Paper>
+                      />
                     ))}
                 </Box>
-              </Box>
+              </Paper>
             </Grid>
           ))}
         </Grid>
 
-        <Box sx={{ maxWidth: '800px', margin: '0 auto', marginTop: 4 }}>
-          <Typography
-            variant="h6"
-            sx={{
-              fontWeight: 700,
-              marginBottom: 3,
-              color: isDark ? '#ffffff' : '#000000',
-              textAlign: 'center',
-            }}
-          >
-            Languages
+        {/* Section Langues */}
+        <Box sx={{ mt: 8, maxWidth: 800, mx: 'auto' }}>
+          <Typography variant="h5" fontWeight={700} textAlign="center" sx={{ mb: 4 }}>
+            Langues
           </Typography>
 
-          <Box sx={{ display: 'grid', gridTemplateColumns: 'repeat(2, minmax(0, 1fr))', gap: 3, alignItems: 'stretch' }}>
+          <Grid container spacing={3} justifyContent="center">
             {languages.map((lang, index) => {
               const Flag = lang.flag
               return (
-                <Box key={index} sx={{ display: 'flex' }}>
+                <Grid size={{ xs: 12, sm: 6 }} key={index}>
                   <Paper
                     elevation={0}
                     sx={{
-                      padding: 3,
-                      backgroundColor: isDark ? 'rgba(255, 255, 255, 0.05)' : 'rgba(0, 0, 0, 0.02)',
-                      border: `1px solid ${isDark ? 'rgba(255, 255, 255, 0.1)' : 'rgba(0, 0, 0, 0.1)'}`,
-                      borderRadius: 2,
-                      transition: 'all 0.3s ease',
-                      flex: 1,
+                      p: 3,
                       display: 'flex',
-                      flexDirection: 'column',
-                      minHeight: 120,
-                      minWidth: 180,
-                      width: 350,
-                      '&:hover': {
-                        backgroundColor: isDark ? 'rgba(255, 255, 255, 0.08)' : 'rgba(0, 0, 0, 0.04)',
-                        borderColor: isDark ? 'rgba(255, 255, 255, 0.2)' : 'rgba(0, 0, 0, 0.2)',
-                      },
+                      alignItems: 'center',
+                      gap: 3,
+                      border: `1px solid ${theme.palette.divider}`,
+                      borderRadius: 3,
+                      bgcolor: 'background.paper',
+                      transition: '0.3s',
                     }}
                   >
                     <Box
                       sx={{
-                        display: 'flex',
-                        flexDirection: 'column',
-                        alignItems: 'flex-start',
-                        marginBottom: 2,
-                        flex: 1,
+                        width: 60,
+                        height: 45,
+                        boxShadow: 2,
+                        borderRadius: 1,
+                        overflow: 'hidden',
+                        flexShrink: 0
                       }}
                     >
-                      <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
-                        <Box sx={{ width: 32, height: 24, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                          <Flag title={lang.name} style={{ width: '100%', height: '100%', borderRadius: 2 }} />
-                        </Box>
-                        <Typography
-                          variant="body1"
-                          sx={{
-                            color: isDark ? '#d0d0d0' : '#333333',
-                            fontWeight: 600,
-                          }}
-                        >
-                          {lang.name}
-                        </Typography>
-                      </Box>
-                      <Typography
-                        variant="body1"
-                        sx={{
-                          color: isDark ? '#808080' : '#353837f6',
-                        }}
-                      >
-                        {lang.level} 
+                      <Flag title={lang.name} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                    </Box>
+
+                    <Box>
+                      <Typography variant="h6" fontWeight={700}>
+                        {lang.name}
+                      </Typography>
+                      <Typography variant="body2" color="text.secondary">
+                        {lang.level}
                       </Typography>
                     </Box>
                   </Paper>
-                </Box>
+                </Grid>
               )
             })}
-          </Box>
+          </Grid>
         </Box>
       </Container>
     </Box>

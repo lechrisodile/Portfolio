@@ -1,92 +1,149 @@
 "use client"
 
-import { Box, Container, Typography, Button, Grid } from "@mui/material"
-import { useTheme } from "./theme-provider"
+import { Box, Container, Typography, Button, Stack, Chip } from "@mui/material"
+import { useTheme, alpha } from "@mui/material/styles" // Utilisation du hook standard MUI
+import SendIcon from '@mui/icons-material/Send';
+import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
+import CircleIcon from '@mui/icons-material/Circle';
 
 export function Hero() {
-  const { darkMode } = useTheme()
+  const theme = useTheme()
+  const isDark = theme.palette.mode === 'dark'
 
   return (
     <Box
       id="hero"
       sx={{
-        minHeight: '100vh',
+        minHeight: '90vh', // Prend presque tout l'écran
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
-        paddingTop: '64px',
-        paddingBottom: '64px',
+        position: 'relative',
+        overflow: 'hidden', // Pour couper les formes d'arrière-plan qui dépassent
       }}
     >
-      <Container maxWidth="sm">
-        <Grid sx={{ textAlign: 'center', position: 'relative', zIndex: 1 }}>
-          <Grid size={12} sx={{ md: 8 }}>
+      {/* --- BACKGROUND DECORATIF (Blobs de couleur) --- */}
+      <Box
+        sx={{
+          position: 'absolute',
+          top: '-10%',
+          left: '50%',
+          transform: 'translateX(-50%)',
+          width: '600px',
+          height: '600px',
+          background: isDark 
+            ? 'radial-gradient(circle, rgba(25, 118, 210, 0.15) 0%, rgba(0,0,0,0) 70%)' 
+            : 'radial-gradient(circle, rgba(23, 132, 222, 0.1) 0%, rgba(255,255,255,0) 70%)',
+          zIndex: 0,
+          pointerEvents: 'none',
+        }}
+      />
+
+      <Container maxWidth="md" sx={{ position: 'relative', zIndex: 1 }}>
+        <Stack spacing={4} alignItems="center" textAlign="center">
+          
+          {/* 1. BADGE "DISPONIBLE" OU "ETUDIANT" */}
+          {/* <Chip 
+            icon={<CircleIcon sx={{ fontSize: '10px !important', color: '#07ec0fff' }} />}
+            label="Open to Internship / Opportunities" 
+            variant="outlined"
+            color="success"
+            sx={{ 
+                borderColor: isDark ? alpha(theme.palette.divider, 0.5) : alpha(theme.palette.divider, 0.5),
+                backgroundColor: isDark ? alpha('#fff', 0.05) : alpha('#00f018ff', 0.02),
+                fontWeight: 600,
+            }}
+          /> */}
+
+          {/* 2. TITRE PRINCIPAL */}
+          <Box>
             <Typography
               variant="h1"
-              gutterBottom
               sx={{
-                background: darkMode
+                fontWeight: 800,
+                fontSize: { xs: '2.5rem', sm: '3.5rem', md: '4.5rem' }, // Responsive font size
+                lineHeight: 1.1,
+                mb: 1
+              }}
+            >
+              Industrial
+            </Typography>
+            <Typography
+              variant="h1"
+              component="span"
+              sx={{
+                fontWeight: 800,
+                fontSize: { xs: '2.5rem', sm: '3.5rem', md: '4.5rem' },
+                lineHeight: 1.1,
+                background: isDark
                   ? "linear-gradient(135deg, #60a5fa 0%, #34d399 100%)"
-                  : "linear-gradient(135deg, #1784deff 10%, #1785ded3 100%)",
+                  : "linear-gradient(135deg, #1784de 10%, #9c27b0 100%)", // Un dégradé plus "punchy"
                 WebkitBackgroundClip: "text",
                 WebkitTextFillColor: "transparent",
                 backgroundClip: "text",
               }}
             >
-              Industrial 
-            <br />
-            <Box component="span" sx={{ }}>
-              computing Student
-            </Box>
+              Computing Student
             </Typography>
+          </Box>
 
-            <Typography variant="body1" color="text.secondary" 
+          {/* 3. DESCRIPTION */}
+          <Typography 
+            variant="body1" 
+            color="text.secondary" 
             sx={{
-              marginBottom: 4,
-              // color: isDark ? '#b0b0b0' : '#666666',
-              fontWeight: 300,
-              fontSize: { xs: '0.95rem', sm: '1rem', md: '1.1rem' },
-              lineHeight: 1.6,
+              maxWidth: '600px',
+              fontSize: { xs: '1rem', sm: '1.125rem' },
+              lineHeight: 1.8,
             }}
-            >
-              Curious and driven by a passion for innovation, I constantly seek to expand
-              my knowledge and skills in the field of Industrial IT.
-              I embrace each challenge as an opportunity to grow and
-              explore new frontiers in IT and automation.
-            </Typography>
+          >
+            Curious and driven by a passion for innovation, I embrace each challenge as an opportunity to grow. 
+            Focused on bridging the gap between <Box component="span" fontWeight={700} color="text.primary">IT</Box> and <Box component="span" fontWeight={700} color="text.primary">Industrial Automation</Box>.
+          </Typography>
 
-            <Box 
-            sx={{ 
-              display: 'flex', 
-              gap: 2, 
-              justifyContent: 'center', 
-              marginBottom: 6, 
-              flexWrap: 'wrap' 
-              }}
+          {/* 4. BOUTONS D'ACTION */}
+          <Stack direction={{ xs: 'column', sm: 'row' }} spacing={2} sx={{ pt: 2 }}>
+            <Button 
+                variant="contained" 
+                size="large"
+                href="#contact"
+                endIcon={<SendIcon />}
+                sx={{
+                    px: 4, py: 1.5,
+                    borderRadius: 2,
+                    fontSize: '1rem',
+                    fontWeight: 700,
+                    textTransform: 'none',
+                    boxShadow: isDark ? '0 4px 14px 0 rgba(96, 165, 250, 0.5)' : '0 4px 14px 0 rgba(23, 132, 222, 0.39)',
+                }}
             >
+              Get In Touch
+            </Button>
+            
+            <Button 
+                variant="outlined" 
+                size="large"
+                href="#projects" // Redirige vers les projets plutôt que About
+                endIcon={<KeyboardArrowDownIcon />}
+                sx={{
+                    px: 4, py: 1.5,
+                    borderRadius: 2,
+                    fontSize: '1rem',
+                    fontWeight: 700,
+                    textTransform: 'none',
+                    borderColor: theme.palette.divider,
+                    color: 'text.primary',
+                    '&:hover': {
+                        borderColor: 'text.primary',
+                        backgroundColor: 'transparent'
+                    }
+                }}
+            >
+              View Work
+            </Button>
+          </Stack>
 
-              <Button variant="contained"  href="#contact"
-              sx={{
-                padding: { xs: '10px 24px', sm: '12px 32px' },
-                fontSize: { xs: '0.9rem', sm: '1rem' },
-                fontWeight: 600,
-              }}
-              >
-                Get In Touch
-              </Button>
-              <Button variant="outlined" 
-              href="#about"
-              sx={{
-                padding: { xs: '10px 24px', sm: '12px 32px' },
-                fontSize: { xs: '0.9rem', sm: '1rem' },
-                fontWeight: 600,
-              }}
-              >
-                View Work
-              </Button>
-            </Box>
-          </Grid>
-        </Grid>
+        </Stack>
       </Container>
     </Box>
   )
