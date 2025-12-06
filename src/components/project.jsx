@@ -285,7 +285,7 @@ export function ProjectsSection() {
                 WebkitTextFillColor: "transparent",
             }}
           >
-            Projets Académiques
+            Projects Académiques
           </Typography>
         </Box>
         
