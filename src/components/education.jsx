@@ -2,9 +2,6 @@ import { Box, Container, Typography, Paper, Chip, IconButton } from '@mui/materi
 import { useTheme, alpha } from '@mui/material/styles'
 import { useState } from 'react'
 import SchoolIcon from '@mui/icons-material/School'
-import CalendarTodayIcon from '@mui/icons-material/CalendarToday'
-import CheckCircleIcon from '@mui/icons-material/CheckCircle'
-import RadioButtonCheckedIcon from '@mui/icons-material/RadioButtonChecked'
 import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew'
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos'
 
@@ -116,9 +113,9 @@ export function Education() {
       status: "Current",
       date: "2023 - 2026",
       images: ["images/helha.png"], 
-      description: "Focused on electronics and automation, with a strong emphasis on networks and cybersecurity. The program bridges operational technology (OT) and information technology (IT).",
+      description: "Focused on electronics and automation, with a strong emphasis on networks and cybersecurity. The program bridges industrial technology and information technology (IT).",
       color: "#1976d2",
-      tags: ["Automation", "Network Security", "OT/IT"]
+      tags: ["Automation", "Network Security", "IT"]
     },
     {
       degree: "First-Year Physics",
