@@ -3,4 +3,8 @@ As an industrial IT student, I am passionate about intelligent systems,
           IoT connectivity, and the use of modern development frameworks. I aim to build innovative
            solutions that bridge technology and efficiency, 
           allowing me to grow through collaborative and challenging projects.
-          
+
+
+            {/* <Typography variant="body1" color="text.secondary" sx={{ fontSize: '1.1rem', lineHeight: 1.8, mb: 2, textAlign: 'justify' }}>
+              I am a 22-year-old Industrial Computing student, originally from Cameroon and living in Belgium since 2023.
+            </Typography> */}

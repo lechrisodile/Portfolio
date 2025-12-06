@@ -48,30 +48,18 @@ export function About() {
       id="about"
       sx={{
         py: { xs: 8, md: 12 },
-        // backgroundColor: "background.default" // Optionnel selon ton layout global
       }}
     >
       <Container maxWidth="lg">
-        
+
         {/* TITRE DE SECTION */}
         <Box sx={{ mb: 8, textAlign: "center" }}>
-          <Typography
-            variant="overline"
-            sx={{
-              color: "primary.main",
-              fontWeight: 600,
-              fontSize: "0.9rem",
-              letterSpacing: "0.1em",
-            }}
-          >
-            Who I Am
-          </Typography>
           <Typography
             variant="h2"
             sx={{
               fontWeight: 800,
               mt: 1,
-              background: isDark 
+              background: isDark
                 ? `linear-gradient(45deg, #90caf9 30%, #ce93d8 90%)`
                 : `linear-gradient(45deg, #1976d2 30%, #9c27b0 90%)`,
               WebkitBackgroundClip: "text",
@@ -85,7 +73,7 @@ export function About() {
         {/* 1. INTRO & PROFIL */}
         <Grid container spacing={6} alignItems="center" sx={{ mb: 10 }}>
           {/* Photo / Avatar à Gauche */}
-          <Grid size={{xs:12, md:4}} sx={{ display: 'flex', justifyContent: 'center' }}>
+          <Grid size={{ xs: 12, md: 4 }} sx={{ display: 'flex', justifyContent: 'center' }}>
             <Box
               sx={{
                 position: 'relative',
@@ -100,23 +88,30 @@ export function About() {
                 boxShadow: isDark ? '0 0 40px rgba(100, 181, 246, 0.2)' : '0 0 40px rgba(23, 132, 222, 0.1)',
               }}
             >
-                {/* Remplace src="" par ta photo : src="images/profile.jpg" */}
-               <Avatar 
-                src="images/mePortrait.png" 
+              {/* Remplace src="" par ta photo : src="images/profile.jpg" */}
+              <Avatar
+                src="images/mePortrait.png"
                 alt="Christan Tchayep"
                 sx={{ width: 250, height: 250 }}
-               />
+              />
             </Box>
           </Grid>
 
           {/* Texte Intro à Droite */}
-          <Grid size={{xs:12, md:8}}>
+          <Grid size={{ xs: 12, md: 8 }}>
             <Typography variant="h4" fontWeight={700} sx={{ mb: 2 }}>
               Hi, I'm Christan Tchayep
             </Typography>
-            <Typography variant="body1" color="text.secondary" sx={{ fontSize: '1.1rem', lineHeight: 1.8, mb: 3, textAlign: 'justify' }}>
-              I’m a 22-year-old industrial computing student born in Cameroon and living in Belgium since 2023. 
-              My journey is defined by a constant drive to understand how things work—from the pixels on a screen to the electrons in a microcontroller.
+            {/* Paragraphe 1 : Bio simple */}
+            <Typography variant="body1" color="text.secondary" sx={{ fontSize: '1.1rem', lineHeight: 1.8, mb: 2, textAlign: 'justify' }}>
+              I’m a 22-year-old industrial computing student, born in Cameroon and living in Belgium since 2023. Driven by curiosity and a passion for technology, I aim to turn ideas into tangible, high-impact projects.
+            </Typography>
+
+            {/* Paragraphe 2 : Description Professionnelle */}
+            <Typography variant="body1" color="text.secondary" sx={{ fontSize: '1.1rem', lineHeight: 1.8, mb: 4, textAlign: 'justify' }}>
+              My journey is defined by a constant drive to understand they <Box component="span" sx={{ color: 'text.primary', fontWeight: 600 }}>intelligent systems, automation, and embedded systems</Box>.
+              I focus on the technologies shaping tomorrow’s industry: <Box component="span" sx={{ color: 'primary.main', fontWeight: 600 }}>IoT, advanced control, and software integration</Box>.
+              Always curious and hands-on, I strive to learn, experiment, and build reliable solutions that deliver real-world impact.
             </Typography>
 
             {/* Chips Stats */}
@@ -129,9 +124,9 @@ export function About() {
         </Grid>
 
         {/* 2. LE PARCOURS (3 CARDS) */}
-        <Grid container spacing={4} sx={{ mb: 8 }}>
+        {/* <Grid container spacing={4} sx={{ mb: 8 }}>
           {journeySteps.map((step, index) => (
-            <Grid size={{xs:12, md:4}}  key={index}>
+            <Grid size={{ xs: 12, md: 4 }} key={index}>
               <Paper
                 elevation={isDark ? 2 : 0}
                 sx={{
@@ -142,24 +137,19 @@ export function About() {
                   border: '1px solid',
                   borderColor: 'divider',
                   transition: 'transform 0.3s ease',
-                  '&:hover': {
-                    transform: 'translateY(-5px)',
-                    borderColor: alpha(step.color, 0.5),
-                    boxShadow: theme.shadows[4]
-                  }
                 }}
               >
-                <Box sx={{ 
-                    width: 50, height: 50, 
-                    borderRadius: 3, 
-                    bgcolor: alpha(step.color, 0.1), 
-                    color: step.color,
-                    display: 'flex', alignItems: 'center', justifyContent: 'center',
-                    mb: 3
+                <Box sx={{
+                  width: 50, height: 50,
+                  borderRadius: 3,
+                  bgcolor: alpha(step.color, 0.1),
+                  color: step.color,
+                  display: 'flex', alignItems: 'center', justifyContent: 'center',
+                  mb: 3
                 }}>
                   {step.icon}
                 </Box>
-                
+
                 <Typography variant="h6" fontWeight={700} sx={{ mb: 0.5 }}>
                   {step.title}
                 </Typography>
@@ -173,46 +163,24 @@ export function About() {
 
                 <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 1, mt: 'auto' }}>
                   {step.skills.map((skill) => (
-                    <Chip 
-                        key={skill} 
-                        label={skill} 
-                        size="small" 
-                        sx={{ 
-                            fontSize: '0.7rem', 
-                            bgcolor: alpha(step.color, 0.05),
-                            color: isDark ? '#fff' : 'text.primary',
-                            border: `1px solid ${alpha(step.color, 0.2)}`
-                        }} 
+                    <Chip
+                      key={skill}
+                      label={skill}
+                      size="small"
+                      sx={{
+                        fontSize: '0.7rem',
+                        bgcolor: alpha(step.color, 0.05),
+                        color: isDark ? '#fff' : 'text.primary',
+                        border: `1px solid ${alpha(step.color, 0.2)}`
+                      }}
                     />
                   ))}
                 </Box>
               </Paper>
             </Grid>
           ))}
-        </Grid>
+        </Grid> */}
 
-        {/* 3. LE BUT (GOAL) */}
-        <Paper
-            elevation={0}
-            sx={{
-                p: { xs: 4, md: 6 },
-                borderRadius: 4,
-                bgcolor: isDark ? alpha(theme.palette.primary.main, 0.05) : alpha(theme.palette.primary.main, 0.02),
-                border: `1px dashed ${alpha(theme.palette.primary.main, 0.3)}`,
-                textAlign: 'center',
-                maxWidth: 800,
-                mx: 'auto'
-            }}
-        >
-            <RocketLaunchIcon sx={{ fontSize: 40, color: 'primary.main', mb: 2 }} />
-            <Typography variant="h5" fontWeight={700} gutterBottom>
-                What's Next?
-            </Typography>
-            <Typography variant="body1" color="text.secondary" sx={{ fontSize: '1.1rem', lineHeight: 1.8 }}>
-                "These studies and experiences have given me a strong foundation to tackle tomorrow’s world and its challenges. 
-                My new goal is to gain what I’m missing: <Box component="span" sx={{ color: 'primary.main', fontWeight: 700 }}>real years of experience inside a tech company.</Box>"
-            </Typography>
-        </Paper>
 
       </Container>
     </Box>

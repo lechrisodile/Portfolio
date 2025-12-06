@@ -97,8 +97,8 @@ export function Hero() {
               lineHeight: 1.8,
             }}
           >
-            Curious and driven by a passion for innovation, I embrace each challenge as an opportunity to grow. 
-            Focused on bridging the gap between <Box component="span" fontWeight={700} color="text.primary">IT</Box> and <Box component="span" fontWeight={700} color="text.primary">Industrial Automation</Box>.
+            Curious and driven by a passion for innovation technology,
+            I embrace each challenge as an opportunity to grow.             
           </Typography>
 
           {/* 4. BOUTONS D'ACTION */}

@@ -1,30 +1,40 @@
-import type React from "react"
-import type { Metadata } from "next"
-import { Geist, Geist_Mono } from "next/font/google"
-import ThemeProvider from "../components/theme-provider"
-import "../styles/navigation.styles.ts"
+import type { Metadata } from "next";
+import { Geist, Geist_Mono } from "next/font/google";
+import ThemeProvider from "../components/theme-provider";
+import { Navigation } from "../components/navigation";
+import "../styles/navigation.styles.ts";
 
-const _geist = Geist({ subsets: ["latin"] })
-const _geistMono = Geist_Mono({ subsets: ["latin"] })
-
-// Utilise la className retournée sur <html> ou <body>
-export const fontClasses = `${_geist.className} ${_geistMono.className}`
+const geist = Geist({ subsets: ["latin"] });
+const geistMono = Geist_Mono({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Industrial IT Portfolio - Christan T.",
-  description: "Portfolio of a third-year Industrial IT student",
-}
+  title: "Christan Tchayep",
+  description: "Industrial computing engineer specialized in automation, embedded systems, and IoT solutions.",
+  icons: {
+    icon: "images/pc.png",
+  },
+};
 
 export default function RootLayout({
   children,
 }: Readonly<{
-  children: React.ReactNode
+  children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={fontClasses}>
-      <body className={`font-sans antialiased`}>
-        <ThemeProvider>{children}</ThemeProvider>
+    <html lang="en" className={`${geist.className} ${geistMono.className}`}>
+      {/* AJOUT DE: suppressHydrationWarning 
+        Cela empêche les erreurs causées par les extensions comme Grammarly, 
+        Dark Reader ou les gestionnaires de mots de passe.
+      */}
+      <body 
+        className="font-sans antialiased" 
+        suppressHydrationWarning={true}
+      >
+        <ThemeProvider>
+          <Navigation />
+          {children}
+        </ThemeProvider>
       </body>
     </html>
-  )
+  );
 }

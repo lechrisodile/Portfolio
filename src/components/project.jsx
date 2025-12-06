@@ -6,15 +6,15 @@ import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew'
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos'
 
 const projects = [
-  {
-    title: 'Autonomous Secure Door Access System',
-    type: 'school',
-    inProduction: true,
-    status: 'Ongoing – 3rd Year',
-    description: 'Development of an autonomous door access system combining a fingerprint module and an RFID card reader for multi-factor authentication. All access events are stored and synchronized with a backend service, while a mobile application offers real-time monitoring. The project merges embedded hardware control with a modern full-stack architecture to deliver a reliable and secure access management solution.',
-    techStack: ['Next.js', 'Node.js', 'React', 'React Native', 'Microcontrollers', 'Embedded Systems'],
-    images: ['images/pc.png', 'images/projet2.png'] // Ajout d'une image test pour voir le carrousel
-  },
+  // {
+  //   title: 'Autonomous Secure Door Access System',
+  //   type: 'school',
+  //   inProduction: true,
+  //   status: 'Ongoing – 3rd Year',
+  //   description: 'Development of an autonomous door access system combining a fingerprint module and an RFID card reader for multi-factor authentication. All access events are stored and synchronized with a backend service, while a mobile application offers real-time monitoring. The project merges embedded hardware control with a modern full-stack architecture to deliver a reliable and secure access management solution.',
+  //   techStack: ['Next.js', 'Node.js', 'React', 'React Native', 'Microcontrollers', 'Embedded Systems'],
+  //   images: ['images/pc.png', 'images/projet2.png'] // Ajout d'une image test pour voir le carrousel
+  // },
   {
     title: 'Automated Warehouse System',
     type: 'school',
