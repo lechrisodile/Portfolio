@@ -42,14 +42,14 @@ export function Hero() {
       />
 
       <Container maxWidth="md" sx={{ position: 'relative', zIndex: 1 }}>
-        <Stack spacing={4} alignItems="center" textAlign="center">
+        <Stack spacing={2.5} alignItems="center" textAlign="center">
 
           {/* 1. PROFILE PICTURE AT THE TOP */}
           <Box
             sx={{
               position: 'relative',
-              width: { xs: 160, sm: 200, md: 240 },
-              height: { xs: 160, sm: 200, md: 240 },
+              width: { xs: 140, sm: 170, md: 200 },
+              height: { xs: 140, sm: 170, md: 200 },
               borderRadius: '50%',
               bgcolor: isDark ? 'rgba(96, 165, 250, 0.1)' : 'rgba(23, 132, 222, 0.05)',
               display: 'flex',
@@ -63,7 +63,7 @@ export function Hero() {
             <Avatar
               src="images/mePortrait.png"
               alt="Christan Tchayep"
-              sx={{ width: { xs: 140, sm: 180, md: 220 }, height: { xs: 140, sm: 180, md: 220 } }}
+              sx={{ width: { xs: 120, sm: 150, md: 180 }, height: { xs: 120, sm: 150, md: 180 } }}
             />
           </Box>
 

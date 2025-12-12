@@ -3,8 +3,6 @@ import { Box, Container, Typography, Grid, Paper, Chip, Stack } from '@mui/mater
 import { useTheme, alpha } from '@mui/material/styles'
 
 // Icons
-import LocationOnIcon from '@mui/icons-material/LocationOn';
-import CakeIcon from '@mui/icons-material/Cake';
 import SchoolIcon from '@mui/icons-material/School';
 import { EmojiObjects, SportsSoccer } from '@mui/icons-material';
 
@@ -21,7 +19,7 @@ export function About() {
       text: "My goal is to work for a company specializing in one of the fields of industrial IT, so that I can play an active role in technological progress and contribute to the development of society.",
       tags: ["Industrial IT", "Innovation", "Impact"],
     },
-     {
+    {
       title: "Knowledge",
       icon: <SchoolIcon />,
       color: "#0288d1", // Bleu
@@ -30,12 +28,11 @@ export function About() {
     },
     {
       title: "Hobbies & Interests",
-      icon: <SportsSoccer/>,
+      icon: <SportsSoccer />,
       color: "#7b1fa2", // Violet
       text: "I am passionate about music, especially the piano, which offers me a real moment of relaxation and escape. I also enjoy soccer, another way for me to entertain myself and recharge my batteries.",
       tags: ["Piano", "Soccer", "Music"]
     },
-   
   ]
 
   return (
@@ -48,7 +45,7 @@ export function About() {
       <Container maxWidth="lg">
 
         {/* TITRE DE SECTION */}
-        <Box sx={{ mb: 8, textAlign: "center" }}>
+        <Box sx={{ mb: 4, textAlign: "center" }}>
           <Typography
             variant="h2"
             sx={{
@@ -66,7 +63,7 @@ export function About() {
         </Box>
 
         {/* 1. INTRO & PROFIL */}
-        <Grid container spacing={6} alignItems="center" sx={{ mb: 10 }}>
+        <Grid container spacing={6} alignItems="center" sx={{ mb: 6 }}>
           {/* Texte Intro */}
           <Grid size={{ xs: 12 }}>
             <Typography variant="h4" fontWeight={700} sx={{ mb: 2 }}>
@@ -77,11 +74,11 @@ export function About() {
             <Typography variant="body1" color="text.secondary" sx={{ fontSize: '1.1rem', lineHeight: 1.8, mb: 2, textAlign: 'justify' }}>
               I&apos;m 22 years old and currently a third-year student in industrial computer science at HELHa in Charleroi.
               Born in Cameroon, I completed my primary and secondary education there, graduating with my high school diploma in 2022.
-               I then began my first year of physics at the University of Yaoundé I, which I successfully completed.
+              I then began my first year of physics at the University of Yaoundé I, which I successfully completed.
             </Typography>
 
             {/* Paragraphe 2 : Motivation & Arrivée en Belgique */}
-             <Typography variant="body1" color="text.secondary" sx={{ fontSize: '1.1rem', lineHeight: 1.8, mb: 2, textAlign: 'justify' }}>
+            <Typography variant="body1" color="text.secondary" sx={{ fontSize: '1.1rem', lineHeight: 1.8, mb: 2, textAlign: 'justify' }}>
               Passionate about computer science and eager to deepen my knowledge in this field, I applied for a student visa to pursue my studies in industrial computer science abroad.
               After obtaining this visa, I moved to Belgium, where I have been living since 2023.
             </Typography>
@@ -96,12 +93,6 @@ export function About() {
               In parallel with my studies, I also take on student jobs to finance my education and cover my living expenses. These work experiences have helped me develop a sense of responsibility, autonomy, and perseverance, while allowing me to pursue my academic goals under good conditions.
             </Typography>
 
-            {/* Chips Stats */}
-            <Stack direction={{ xs: 'column', sm: 'row' }} spacing={2}>
-              <Chip icon={<LocationOnIcon />} label="Belgium" variant="outlined" sx={{ fontWeight: 500 }} />
-              <Chip icon={<CakeIcon />} label="22 Years Old" variant="outlined" sx={{ fontWeight: 500 }} />
-              <Chip icon={<SchoolIcon />} label="Industrial Computing Student" variant="outlined" sx={{ fontWeight: 500 }} />
-            </Stack>
           </Grid>
         </Grid>
 
