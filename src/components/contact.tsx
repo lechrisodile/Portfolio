@@ -76,7 +76,7 @@ export function Contact() {
               backgroundClip: "text",
             }}
           >
-            Let’s Work Together
+            Let’s work together
           </Typography>
 
           <Typography

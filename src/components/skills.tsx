@@ -183,7 +183,7 @@ export function SkillsSection() {
         {/* Section Langues */}
         <Box sx={{ mt: 8, maxWidth: 800, mx: 'auto' }}>
           <Typography variant="h5" fontWeight={700} textAlign="center" sx={{ mb: 4 }}>
-            Langues
+            Languages
           </Typography>
 
           <Grid container spacing={3} justifyContent="center">

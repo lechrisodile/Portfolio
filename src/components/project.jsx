@@ -25,6 +25,15 @@ const projects = [
     images: ['images/projet21.png','images/projet2.png']
   },
   {
+    title: 'Regulation PID on Siemens S7-1200',
+    type: 'school',
+    inProduction: false,
+    status: 'Completed – 2nd Year',
+    description: 'Design and implementation of an automated warehouse system capable of scanning AprilTags on stored items using a camera mounted inside a 3D printer frame. Inventory data is displayed on a web application and an onboard display. Users can order items from a keypad or the website, and the robotic arm picks and delivers items to the output zone.',
+    techStack: ['Siemens PLC','Ladder Logic','HMI'],
+    images: ['images/automate.png','images/automate1.png','images/automate3.png','images/automate4.png']
+  },
+  {
     title: 'Guessing Game – P8055 Board',
     type: 'school',
     inProduction: false,
@@ -285,7 +294,7 @@ export function ProjectsSection() {
                 WebkitTextFillColor: "transparent",
             }}
           >
-            Projects Académiques
+            Academic Projects
           </Typography>
         </Box>
         

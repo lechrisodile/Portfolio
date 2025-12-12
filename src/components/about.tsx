@@ -10,6 +10,7 @@ import RocketLaunchIcon from '@mui/icons-material/RocketLaunch';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
 import CakeIcon from '@mui/icons-material/Cake';
 import SchoolIcon from '@mui/icons-material/School';
+import { EmojiObjects, Sports, SportsSoccer } from '@mui/icons-material';
 
 export function About() {
   const theme = useTheme()
@@ -18,29 +19,27 @@ export function About() {
   // Données structurées pour les cartes de parcours
   const journeySteps = [
     {
-      title: "The Self-Taught Creator",
-      period: "Early Origins",
-      icon: <MovieCreationIcon />,
+      title: "Goal",
+      icon: <EmojiObjects />,
       color: "#f57c00", // Orange
-      text: "Before my academic journey, I taught myself video editing and worked as a freelancer. This experience forged my core soft skills: patience, entrepreneurship, and effective communication.",
-      skills: ["Self-learning", "Creativity", "Patience"]
+      text: "My goal is to work for a company specializing in one of the fields of industrial IT, so that I can play an active role in technological progress and contribute to the development of society.",
+      tags: ["Industrial IT", "Innovation", "Impact"],
     },
-    {
-      title: "The Software Architect",
-      period: "1st Bachelor (HELHa Mons)",
-      icon: <TerminalIcon />,
+     {
+      title: "Knowledge",
+      icon: <SchoolIcon />,
       color: "#0288d1", // Bleu
-      text: "My first degree sparked a passion for clean code and architecture. I learned that code is written for humans first, and that good architecture is the best defense against technical debt.",
-      skills: ["Clean Code", "Architecture", "Web Dev"]
+      text: "I have developed strong knowledge in programming languages, mobile development, and automation, as well as in embedded systems and IoT solutions.",
+      tags: ["Programming", "Automation", "IoT"]
     },
     {
-      title: "The Industrial Engineer",
-      period: "2nd Bachelor (HELHa Charleroi)",
-      icon: <PrecisionManufacturingIcon />,
+      title: "Hobbies & Interests",
+      icon: <SportsSoccer/>,
       color: "#7b1fa2", // Violet
-      text: "Pursuing a second degree in Industrial Computing allowed me to bridge the gap between software and hardware, giving me a complete understanding of our connected world.",
-      skills: ["Embedded Systems", "Hardware", "IoT"]
-    }
+      text: "I am passionate about music, especially the piano, which offers me a real moment of relaxation and escape. I also enjoy soccer, another way for me to entertain myself and recharge my batteries.",
+      tags: ["Piano", "Soccer", "Music"]
+    },
+   
   ]
 
   return (
@@ -102,16 +101,28 @@ export function About() {
             <Typography variant="h4" fontWeight={700} sx={{ mb: 2 }}>
               Hi, I'm Christan Tchayep
             </Typography>
-            {/* Paragraphe 1 : Bio simple */}
+
+            {/* Paragraphe 1 : Identité & Parcours (Cameroun -> Belgique) */}
             <Typography variant="body1" color="text.secondary" sx={{ fontSize: '1.1rem', lineHeight: 1.8, mb: 2, textAlign: 'justify' }}>
-              I’m a 22-year-old industrial computing student, born in Cameroon and living in Belgium since 2023. Driven by curiosity and a passion for technology, I aim to turn ideas into tangible, high-impact projects.
+              I am 22 years old and currently a third-year student in industrial computer science at HELHa in Charleroi. 
+              Born in Cameroon, I completed my primary and secondary education there, graduating with my high school diploma in 2022.
+               I then began my first year of physics at the University of Yaoundé I, which I successfully completed.
             </Typography>
 
-            {/* Paragraphe 2 : Description Professionnelle */}
+            {/* Paragraphe 2 : Motivation & Arrivée en Belgique */}
+             <Typography variant="body1" color="text.secondary" sx={{ fontSize: '1.1rem', lineHeight: 1.8, mb: 2, textAlign: 'justify' }}>
+              Passionate about computer science and eager to deepen my knowledge in this field, I applied for a student visa to pursue my studies in industrial computer science abroad.
+              After obtaining this visa, I moved to Belgium, where I have been living since 2023.
+            </Typography>
+
+            {/* Paragraphe 3 : Soft Skills & Jobs Étudiants (TRES IMPORTANT POUR LE PORTFOLIO) */}
+            <Typography variant="body1" color="text.secondary" sx={{ fontSize: '1.1rem', lineHeight: 1.8, mb: 2, textAlign: 'justify' }}>
+              Throughout my entire academic journey, my parents have always encouraged and supported me.
+              Their constant motivation played an essential role in my determination to pursue higher education and to give my best in everything I undertake.
+            </Typography>
             <Typography variant="body1" color="text.secondary" sx={{ fontSize: '1.1rem', lineHeight: 1.8, mb: 4, textAlign: 'justify' }}>
-              My journey is defined by a constant drive to understand they <Box component="span" sx={{ color: 'text.primary', fontWeight: 600 }}>intelligent systems, automation, and embedded systems</Box>.
-              I focus on the technologies shaping tomorrow’s industry: <Box component="span" sx={{ color: 'primary.main', fontWeight: 600 }}>IoT, advanced control, and software integration</Box>.
-              Always curious and hands-on, I strive to learn, experiment, and build reliable solutions that deliver real-world impact.
+              During my first two years at HELHa, I managed to successfully pass all my courses thanks to consistent work, strong motivation, and good time management. 
+              In parallel with my studies, I also take on student jobs to finance my education and cover my living expenses. These work experiences have helped me develop a sense of responsibility, autonomy, and perseverance, while allowing me to pursue my academic goals under good conditions.
             </Typography>
 
             {/* Chips Stats */}
@@ -124,7 +135,7 @@ export function About() {
         </Grid>
 
         {/* 2. LE PARCOURS (3 CARDS) */}
-        {/* <Grid container spacing={4} sx={{ mb: 8 }}>
+        <Grid container spacing={4} sx={{ mb: 8 }}>
           {journeySteps.map((step, index) => (
             <Grid size={{ xs: 12, md: 4 }} key={index}>
               <Paper
@@ -153,25 +164,20 @@ export function About() {
                 <Typography variant="h6" fontWeight={700} sx={{ mb: 0.5 }}>
                   {step.title}
                 </Typography>
-                <Typography variant="caption" color="text.secondary" sx={{ display: 'block', mb: 2, fontWeight: 600 }}>
-                  {step.period}
-                </Typography>
 
                 <Typography variant="body2" color="text.secondary" sx={{ mb: 3, lineHeight: 1.6 }}>
                   {step.text}
                 </Typography>
-
                 <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 1, mt: 'auto' }}>
-                  {step.skills.map((skill) => (
+                  {step.tags.map((tag, tagIndex) => (
                     <Chip
-                      key={skill}
-                      label={skill}
+                      key={tagIndex}
+                      label={tag}
                       size="small"
                       sx={{
-                        fontSize: '0.7rem',
-                        bgcolor: alpha(step.color, 0.05),
-                        color: isDark ? '#fff' : 'text.primary',
-                        border: `1px solid ${alpha(step.color, 0.2)}`
+                        bgcolor: alpha(step.color, 0.15),
+                        color: step.color,
+                        fontWeight: 500,
                       }}
                     />
                   ))}
@@ -179,7 +185,7 @@ export function About() {
               </Paper>
             </Grid>
           ))}
-        </Grid> */}
+        </Grid>
 
 
       </Container>
