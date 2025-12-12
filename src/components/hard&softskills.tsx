@@ -67,7 +67,6 @@ export function Skills() {
       "TypeScript",
       "Python (Data & Scripting)",
       "Java",
-      "C# / .NET",
       "React.js & Next.js",
       "Node.js & Express",
       "React Native (Mobile)",

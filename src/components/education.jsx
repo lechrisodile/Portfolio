@@ -1,5 +1,3 @@
-"use client"
-
 import { Box, Container, Typography, Paper, Chip, IconButton } from '@mui/material'
 import { useTheme, alpha } from '@mui/material/styles'
 import { useState } from 'react'
@@ -115,9 +113,9 @@ export function Education() {
       status: "Current",
       date: "2023 - 2026",
       images: ["images/helha.png"], 
-      description: "Focused on electronics and automation, with a strong emphasis on networks and cybersecurity. The program bridges industrial technology and information technology (IT).",
+      description: "Focused on electronics, automation, and industrial IT. The curriculum includes intensive practical training at TechnoCampus (Competence Center), covering Pneumatics, Hydraulics, Regulation (Control Loops), Electrical Cabinet Maintenance, and Industrial Networks.",
       color: "#1976d2",
-      tags: ["Automation", "Network Security", "IT"]
+      tags: ["Automation", "IT", "Pneumatics", "Hydraulics", "Regulation"]
     },
     {
       degree: "First-Year Physics",
@@ -125,9 +123,9 @@ export function Education() {
       status: "Completed",
       date: "2022 - 2023",
       images: ["images/Yaounde1.png"],
-      description: "Foundation year centered on core scientific disciplines such as mechanics, optics, general physics, chemistry, and applied mathematics.",
+      description: "Foundation year centered on core scientific disciplines such as mechanics, optics, general physics, chemistry, and applied mathematics. Practical work included hands-on sessions in both chemistry and physics laboratories.",
       color: "#9c27b0",
-      tags: ["Mechanics", "Optics", "Applied Math"]
+      tags: ["Mechanics", "Optics", "Applied Math", "Lab Work"]
     }
   ]
 
@@ -196,7 +194,7 @@ export function Education() {
                             <Chip 
                                 label={item.date} 
                                 size="small" 
-                                variant="outlined"
+                                variant="outlined" 
                                 sx={{ fontWeight: 600, height: 24 }} 
                             />
                         </Box>

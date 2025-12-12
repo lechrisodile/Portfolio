@@ -1,5 +1,3 @@
-"use client"
-
 import { Box, Container, Typography, Grid, Paper, Chip, IconButton } from '@mui/material'
 import { useTheme, alpha } from '@mui/material/styles'
 import { useState } from 'react'
@@ -8,32 +6,29 @@ import CodeIcon from '@mui/icons-material/Code'
 import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew'
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos'
 
-// 1. Mise à jour des données : 'image' devient 'images' (tableau)
 const achievements = [
   {
     title: "National Competitor - Industry 4.0",
     subtitle: "StarTech Day 2025 (WorldSkills Belgium)",
     year: "2025",
-    description: "Selected to compete in the national finals at StarTech Day 2025 after a successful pre-selection phase. During this intensive 3-day competition, I programmed Siemens PLCs, developed HMI interfaces, and managed industrial networks under strict time constraints. A valuable experience in managing pressure and solving complex industrial problems.",
-    // Ajoutez vos autres images ici pour activer le carrousel
+    description: "Selected to compete in the national finals at StarTech Day 2025 after a successful pre-selection phase. During this intensive 3-day competition, I programmed Siemens PLCs, developed HMI interfaces, and managed industrial networks under strict time constraints. This experience was a true test of my technical skills and my ability to perform under pressure, reinforcing my passion for industrial automation.",
     images: ["images/worldskills.png"], 
     icon: <EmojiEventsIcon />,
     color: "#2d9bfbff", // Bleu cyan
-    tags: ["Siemens PLC", "HMI", "Pneumatics", "Industrial Network","CIROS","MES4"]
+    tags: ["Siemens PLC", "HMI", "Pneumatics", "Industrial Network", "CIROS", "MES4"]
   },
   {
     title: "Hackathon AI for GOOD",
     subtitle: "AI Study Assistant Project",
     year: "2025",
-    description: "Participated in a hackathon focused on ethical AI. My team and I designed and prototyped an AI-driven study assistant that transforms teacher-provided materials into interactive quizzes and summaries. This project allowed me to explore Large Language Models (LLM) and work in an agile team environment to deliver a working MVP in a limited timeframe.",
-    images: ["images/mic.png","images/mic1.png"],
+    description: "Participated in a hackathon focused on ethical AI, where my team and I developed an AI-driven study assistant. My role involved integrating Large Language Models (LLM) to transform educational content into interactive quizzes. This project not only honed my coding skills in Python and React but also taught me the value of agile collaboration and rapid prototyping to deliver a functional MVP in a limited timeframe.",
+    images: ["images/mic.png", "images/mic1.png", "images/mic3.png"],
     icon: <CodeIcon />,
     color: "#ab47bc", // Violet
-    tags: ["AI / LLM", "React", "Python", "Agile"]
+    tags: ["AI / LLM", "React", "Python", "Agile", "Teamwork"]
   }
 ]
 
-// 2. Composant Reutilisable pour le Carrousel
 const ImageCarousel = ({ images }) => {
   const [currentIndex, setCurrentIndex] = useState(0)
 
@@ -47,7 +42,6 @@ const ImageCarousel = ({ images }) => {
     setCurrentIndex((prev) => (prev - 1 + images.length) % images.length)
   }
 
-  // Si pas d'images ou tableau vide
   if (!images || images.length === 0) return null
 
   return (
@@ -67,12 +61,11 @@ const ImageCarousel = ({ images }) => {
         sx={{
           width: '100%',
           height: '100%',
-          objectFit: 'cover', // Remplit tout le cadre
+          objectFit: 'cover',
           display: 'block',
         }}
       />
 
-      {/* Flèches de navigation (uniquement si > 1 image) */}
       {images.length > 1 && (
         <>
           <IconButton
@@ -103,7 +96,6 @@ const ImageCarousel = ({ images }) => {
             <ArrowForwardIosIcon sx={{ fontSize: 18 }} />
           </IconButton>
 
-          {/* Indicateurs (Points) */}
           <Box sx={{ position: 'absolute', bottom: 12, left: 0, right: 0, display: 'flex', justifyContent: 'center', gap: 1, zIndex: 2 }}>
             {images.map((_, idx) => (
                 <Box 
@@ -136,7 +128,6 @@ export function Achievements() {
       }}
     >
       <Container maxWidth="lg">
-        {/* Titre de la section */}
         <Box sx={{ mb: { xs: 6, md: 10 }, textAlign: "center" }}>
           <Typography
             variant="h2"
@@ -164,11 +155,10 @@ export function Achievements() {
                 key={index} 
                 spacing={{ xs: 4, md: 8 }} 
                 alignItems="center"
-                direction={isEven ? 'row' : 'row-reverse'} // Zig-Zag
+                direction={isEven ? 'row' : 'row-reverse'}
                 sx={{ mb: { xs: 0, md: 8 } }}
               >
                 
-                {/* PARTIE IMAGE (CAROUSEL) */}
                 <Grid item xs={12} md={6}>
                   <Box
                     sx={{
@@ -178,19 +168,16 @@ export function Achievements() {
                       overflow: 'hidden',
                       boxShadow: isDark ? '0 8px 32px rgba(0,0,0,0.5)' : '0 8px 32px rgba(0,0,0,0.1)',
                       transition: 'transform 0.4s ease',
-                      bgcolor: 'background.paper', // Fond par défaut si l'image charge mal
+                      bgcolor: 'background.paper',
                     }}
                   >
-                    {/* Intégration du carousel ici */}
                     <ImageCarousel images={item.images} />
                   </Box>
                 </Grid>
 
-                {/* PARTIE TEXTE */}
                 <Grid item xs={12} md={6}>
                   <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: { xs: 'flex-start', md: isEven ? 'flex-start' : 'flex-end' }, textAlign: { xs: 'left', md: isEven ? 'left' : 'right' } }}>
                     
-                    {/* Header : Icone + Titre */}
                     <Box sx={{ display: 'flex', alignItems: 'center', gap: 2, mb: 2, flexDirection: { xs: 'row', md: isEven ? 'row' : 'row-reverse' } }}>
                        <Box 
                             sx={{ 
@@ -218,7 +205,6 @@ export function Achievements() {
                       {item.description}
                     </Typography>
 
-                    {/* Tags techniques */}
                     <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 1, justifyContent: { xs: 'flex-start', md: isEven ? 'flex-start' : 'flex-end' } }}>
                         {item.tags.map((tag, i) => (
                             <Chip 
