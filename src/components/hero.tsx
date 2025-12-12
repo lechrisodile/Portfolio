@@ -4,7 +4,6 @@ import { Box, Container, Typography, Button, Stack, Chip } from "@mui/material"
 import { useTheme, alpha } from "@mui/material/styles" // Utilisation du hook standard MUI
 import SendIcon from '@mui/icons-material/Send';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
-import CircleIcon from '@mui/icons-material/Circle';
 
 export function Hero() {
   const theme = useTheme()

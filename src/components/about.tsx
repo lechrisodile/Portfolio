@@ -3,10 +3,6 @@ import { Box, Container, Typography, Grid, Paper, Chip, Avatar, Stack } from '@m
 import { useTheme, alpha } from '@mui/material/styles'
 
 // Icons
-import TerminalIcon from '@mui/icons-material/Terminal';
-import MovieCreationIcon from '@mui/icons-material/MovieCreation';
-import PrecisionManufacturingIcon from '@mui/icons-material/PrecisionManufacturing';
-import RocketLaunchIcon from '@mui/icons-material/RocketLaunch';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
 import CakeIcon from '@mui/icons-material/Cake';
 import SchoolIcon from '@mui/icons-material/School';

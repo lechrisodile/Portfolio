@@ -1,17 +1,26 @@
 "use client"
 
 import { Box, Container, Typography, Paper } from '@mui/material'
-import { useTheme } from '@mui/material/styles'
+import { alpha, useTheme } from '@mui/material/styles'
 import MailIcon from '@mui/icons-material/Mail'
 import PhoneIcon from '@mui/icons-material/Phone'
 import LocationOnIcon from '@mui/icons-material/LocationOn'
 import LinkedInIcon from '@mui/icons-material/LinkedIn'
+import { SvgIconComponent } from '@mui/icons-material'
+
+// Définition de l'interface pour structurer les données
+interface ContactItem {
+  icon: SvgIconComponent
+  label: string
+  value: string
+  href?: string
+}
 
 export function Contact() {
   const theme = useTheme()
   const isDark = theme.palette.mode === 'dark'
 
-  const contactItems = [
+  const contactItems: ContactItem[] = [
     {
       icon: MailIcon,
       label: 'Email',
@@ -22,7 +31,6 @@ export function Contact() {
       icon: PhoneIcon,
       label: 'Phone',
       value: '+32 488 93 38 09',
-      href: 'tel:+32488933809',
     },
     {
       icon: LinkedInIcon,
@@ -34,7 +42,6 @@ export function Contact() {
       icon: LocationOnIcon,
       label: 'Location',
       value: 'Charleroi, Belgium',
-      href: undefined,
     }
   ]
 
@@ -42,7 +49,7 @@ export function Contact() {
     <Box
       id="contact"
       sx={{
-        paddingY: 8,
+        py: { xs: 8, md: 12 }, // Espacement vertical cohérent avec les autres sections
       }}
     >
       <Container maxWidth="md">
@@ -67,30 +74,29 @@ export function Contact() {
               fontWeight: 800,
               marginBottom: 2,
               marginTop: 1,
-              fontSize: { xs: '1.8rem', sm: '2.5rem', md: '2.75rem' },
-              
-              // --- C'est ici que j'ai remis le dégradé ---
+              // Même dégradé que About et Skills
               background: isDark 
-                ? `linear-gradient(45deg, #90caf9 30%, #ce93d8 90%)` // Dégradé Mode Sombre
-                : `linear-gradient(45deg, #1784de 30%, #9c27b0 90%)`, // Dégradé Mode Clair (Ton bleu vers violet)
+                ? `linear-gradient(45deg, #90caf9 30%, #ce93d8 90%)` 
+                : `linear-gradient(45deg, #1784de 30%, #9c27b0 90%)`, 
               WebkitBackgroundClip: "text",
               WebkitTextFillColor: "transparent",
               backgroundClip: "text",
             }}
           >
-            Let’s work together
+           Let's collaborate together
           </Typography>
 
           <Typography
             variant="body1"
             sx={{
-              color: isDark ? '#b0b0b0' : '#666666',
-              fontSize: { xs: '0.95rem', sm: '1rem' },
+              color: 'text.secondary',
+              fontSize: { xs: '1rem', sm: '1.1rem' },
               lineHeight: 1.6,
+              maxWidth: '600px',
+              mx: 'auto'
             }}
           >
-            I'm always open to discussing new opportunities, collaborations,
-            or just having a chat about technology and industrial computing.
+            Listening to new opportunities and collaborations. Do not hesitate to contact me to discuss industrial and technological IT projects.
           </Typography>
         </Box>
 
@@ -115,14 +121,15 @@ export function Contact() {
                 key={index}
                 elevation={0}
                 component={isLink ? 'a' : 'div'}
+                // @ts-ignore : href est géré conditionnellement
                 href={isLink ? item.href : undefined}
-                target={isLink && item.href.startsWith('http') ? '_blank' : undefined}
-                rel={isLink && item.href.startsWith('http') ? 'noopener noreferrer' : undefined}
+                target={isLink && item.href?.startsWith('http') ? '_blank' : undefined}
+                rel={isLink && item.href?.startsWith('http') ? 'noopener noreferrer' : undefined}
                 sx={{
-                  padding: 2,
-                  backgroundColor: isDark ? 'rgba(255, 255, 255, 0.05)' : 'rgba(0, 0, 0, 0.02)',
-                  border: `1px solid ${isDark ? 'rgba(255, 255, 255, 0.1)' : 'rgba(0, 0, 0, 0.1)'}`,
-                  borderRadius: 2,
+                  padding: 3,
+                  backgroundColor: isDark ? alpha(theme.palette.primary.main, 0.05) : alpha(theme.palette.primary.main, 0.02),
+                  border: `1px solid ${theme.palette.divider}`,
+                  borderRadius: 3,
                   transition: 'all 0.3s ease',
                   
                   display: 'flex',
@@ -134,42 +141,43 @@ export function Contact() {
                   cursor: isLink ? 'pointer' : 'default',
                   
                   '&:hover': isLink ? {
-                    backgroundColor: isDark ? 'rgba(255, 255, 255, 0.08)' : 'rgba(0, 0, 0, 0.04)',
-                    borderColor: isDark ? '#64b5f6' : '#1784deff', // Bordure bleue au survol
+                    backgroundColor: isDark ? alpha(theme.palette.primary.main, 0.1) : alpha(theme.palette.primary.main, 0.05),
+                    transform: 'translateY(-2px)',
+                    borderColor: theme.palette.primary.main, 
                   } : {},
                 }}
               >
-                {/* Icon Box */}
+                {/* Boîte de l'icône */}
                 <Box
                   sx={{
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
-                    width: 48,
-                    height: 48,
-                    backgroundColor: isDark ? 'rgba(255, 255, 255, 0.05)' : 'rgba(23, 132, 222, 0.05)',
-                    border: `1px solid ${isDark ? 'rgba(255, 255, 255, 0.1)' : 'rgba(23, 132, 222, 0.1)'}`,
-                    borderRadius: 1,
+                    width: 50,
+                    height: 50,
+                    backgroundColor: isDark ? alpha(theme.palette.background.paper, 0.5) : '#fff',
+                    borderRadius: '50%',
                     flexShrink: 0,
+                    boxShadow: 1
                   }}
                 >
                   <IconComponent
                     sx={{
-                      color: isDark ? '#ffffff' : '#1784deff',
+                      color: 'primary.main',
                       fontSize: '1.5rem',
                     }}
                   />
                 </Box>
 
-                {/* Text Content */}
+                {/* Contenu Texte */}
                 <Box sx={{ overflow: 'hidden' }}>
                   <Typography
-                    variant="body2"
+                    variant="caption"
                     sx={{
-                      color: isDark ? '#b0b0b0' : '#666666',
-                      marginBottom: 0.5,
-                      fontWeight: 500,
-                      fontSize: '0.85rem',
+                      color: 'text.secondary',
+                      fontWeight: 600,
+                      textTransform: 'uppercase',
+                      letterSpacing: '0.5px'
                     }}
                   >
                     {item.label}
@@ -178,9 +186,9 @@ export function Contact() {
                     variant="body1"
                     sx={{
                       fontWeight: 600,
-                      color: isDark ? '#ffffff' : '#000000',
-                      fontSize: { xs: '0.9rem', sm: '1rem' },
-                      wordBreak: 'break-all',
+                      color: 'text.primary',
+                      fontSize: { xs: '0.95rem', sm: '1.05rem' },
+                      wordBreak: 'break-all', // Empêche les débordements sur mobile
                     }}
                   >
                     {item.value}
