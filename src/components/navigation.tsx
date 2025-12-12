@@ -1,6 +1,6 @@
 "use client"
 
-import { useState, useEffect } from "react"
+import { useState, useEffect, useRef } from "react"
 import { IconButton, Box, Typography, Button, Drawer, useMediaQuery, Container, Stack } from "@mui/material"
 import { Brightness4, Brightness7, Menu, Close } from "@mui/icons-material"
 import { alpha, useTheme as useMuiTheme } from "@mui/material/styles" 
@@ -19,19 +19,19 @@ export function Navigation() {
   const [openMenu, setOpenMenu] = useState(false)
   const isMobile = useMediaQuery(theme.breakpoints.down("md"))
   const [scrolled, setScrolled] = useState(false)
-  const [isClient, setIsClient] = useState(false)
+  const isFirstRender = useRef(true)
 
   useEffect(() => {
-    setIsClient(true)
-  }, [])
-
-  useEffect(() => {
-    if (!isClient) return
+    // Skip the first render to prevent hydration mismatch
+    if (isFirstRender.current) {
+      isFirstRender.current = false
+      return
+    }
     
     const handleScroll = () => setScrolled(window.scrollY > 50)
     window.addEventListener("scroll", handleScroll)
     return () => window.removeEventListener("scroll", handleScroll)
-  }, [isClient])
+  }, [])
 
   const scrollToSection = (sectionId : string) => {
     const element = document.getElementById(sectionId)

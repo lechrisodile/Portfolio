@@ -1,4 +1,6 @@
-import { Box, Container, Typography, Grid, Paper, Chip, IconButton } from '@mui/material'
+"use client"
+
+import { Box, Container, Typography, Grid, Chip, IconButton } from '@mui/material'
 import { useTheme, alpha } from '@mui/material/styles'
 import { useState } from 'react'
 import EmojiEventsIcon from '@mui/icons-material/EmojiEvents'

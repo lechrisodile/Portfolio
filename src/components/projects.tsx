@@ -92,7 +92,6 @@ interface ImageCarouselProps {
 
 const ImageCarousel = ({ images }: ImageCarouselProps) => {
     const [currentIndex, setCurrentIndex] = useState(0)
-    const theme = useTheme()
 
     const handleNext = () => {
         setCurrentIndex((prev) => (prev + 1) % images.length)
@@ -315,8 +314,8 @@ const TimelineItem = ({ item, isLast }: TimelineItemProps) => {
 }
 
 export function ProjectsSection() {
-    const theme = useTheme();
-    const isDark = theme.palette.mode === 'dark';
+    const { palette } = useTheme();
+    const isDark = palette.mode === 'dark';
 
     return (
         <Box

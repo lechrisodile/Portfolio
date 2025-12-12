@@ -1,3 +1,5 @@
+"use client"
+
 import { Box, Container, Typography, Paper, Chip, IconButton } from '@mui/material'
 import { useTheme, alpha } from '@mui/material/styles'
 import { useState } from 'react'
@@ -8,7 +10,6 @@ import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos'
 // --- COMPOSANT CAROUSEL ---
 const ImageCarousel = ({ images }) => {
   const [currentIndex, setCurrentIndex] = useState(0)
-  const theme = useTheme()
 
   const handleNext = (e) => {
     e.stopPropagation()

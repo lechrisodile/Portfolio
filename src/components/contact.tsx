@@ -83,7 +83,7 @@ export function Contact() {
               backgroundClip: "text",
             }}
           >
-           Let's collaborate together
+           Let&apos;s collaborate together
           </Typography>
 
           <Typography
@@ -121,7 +121,6 @@ export function Contact() {
                 key={index}
                 elevation={0}
                 component={isLink ? 'a' : 'div'}
-                // @ts-ignore : href est géré conditionnellement
                 href={isLink ? item.href : undefined}
                 target={isLink && item.href?.startsWith('http') ? '_blank' : undefined}
                 rel={isLink && item.href?.startsWith('http') ? 'noopener noreferrer' : undefined}

@@ -45,7 +45,7 @@ export function Skills() {
       color: "#8b5cf6", // Violet
       situation: "Financing my studies requires me to work student jobs while maintaining high academic standards.",
       action: "I developed a strict schedule management system to balance work shifts and study time effectively.",
-      result: "I have maintained a high GPA while being financially independent, demonstrating my ability to manage heavy workloads."
+      result: "I have maintained a strong academic performance while being financially independent, demonstrating my ability to manage heavy workloads."
     }
   ]
   const hardSkills = {
@@ -104,9 +104,7 @@ export function Skills() {
     },
   ]
 
-  // @ts-ignore
   const FlagFR = Flags.FR || null;
-  // @ts-ignore
   const FlagGB = Flags.GB || null;
 
   const languages = [

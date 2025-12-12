@@ -1,6 +1,6 @@
 "use client"
 
-import React, { useState, createContext, useContext, useEffect } from "react"
+import React, { useState, createContext, useContext } from "react"
 import { ThemeProvider as MuiThemeProvider, createTheme } from "@mui/material/styles"
 import CssBaseline from "@mui/material/CssBaseline"
 // 1. IMPORT DU CACHE PROVIDER (Essentiel pour Next.js App Router)
@@ -17,11 +17,6 @@ export function useTheme() {
 
 export default function ThemeProvider({ children }: { children: React.ReactNode }) {
   const [darkMode, setDarkMode] = useState(false)
-  const [isMounted, setIsMounted] = useState(false)
-
-  useEffect(() => {
-    setIsMounted(true)
-  }, [])
 
   const theme = createTheme({
     palette: {

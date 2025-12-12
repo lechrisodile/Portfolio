@@ -1,7 +1,7 @@
 "use client"
 
-import { Box, Container, Typography, Button, Stack, Chip } from "@mui/material"
-import { useTheme, alpha } from "@mui/material/styles" // Utilisation du hook standard MUI
+import { Box, Container, Typography, Button, Stack } from "@mui/material"
+import { useTheme } from "@mui/material/styles" // Utilisation du hook standard MUI
 import SendIcon from '@mui/icons-material/Send';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 

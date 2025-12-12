@@ -6,7 +6,7 @@ import { useTheme, alpha } from '@mui/material/styles'
 import LocationOnIcon from '@mui/icons-material/LocationOn';
 import CakeIcon from '@mui/icons-material/Cake';
 import SchoolIcon from '@mui/icons-material/School';
-import { EmojiObjects, Sports, SportsSoccer } from '@mui/icons-material';
+import { EmojiObjects, SportsSoccer } from '@mui/icons-material';
 
 export function About() {
   const theme = useTheme()
@@ -95,12 +95,12 @@ export function About() {
           {/* Texte Intro à Droite */}
           <Grid size={{ xs: 12, md: 8 }}>
             <Typography variant="h4" fontWeight={700} sx={{ mb: 2 }}>
-              Hi, I'm Christan Tchayep
+              Hi, I&apos;m Christan Tchayep
             </Typography>
 
             {/* Paragraphe 1 : Identité & Parcours (Cameroun -> Belgique) */}
             <Typography variant="body1" color="text.secondary" sx={{ fontSize: '1.1rem', lineHeight: 1.8, mb: 2, textAlign: 'justify' }}>
-              I am 22 years old and currently a third-year student in industrial computer science at HELHa in Charleroi. 
+              I&apos;m 22 years old and currently a third-year student in industrial computer science at HELHa in Charleroi.
               Born in Cameroon, I completed my primary and secondary education there, graduating with my high school diploma in 2022.
                I then began my first year of physics at the University of Yaoundé I, which I successfully completed.
             </Typography>
