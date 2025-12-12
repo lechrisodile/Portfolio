@@ -34,6 +34,13 @@ export function Navigation() {
   }, [])
 
   const scrollToSection = (sectionId : string) => {
+    if (sectionId === "hero") {
+      // Pour le hero, aller tout en haut
+      window.scrollTo({ top: 0, behavior: "smooth" })
+      setOpenMenu(false)
+      return
+    }
+    
     const element = document.getElementById(sectionId)
     if (element) {
       const headerOffset = 80

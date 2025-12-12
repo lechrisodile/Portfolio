@@ -321,7 +321,7 @@ export function ProjectsSection() {
         <Box
             id="projects"
             sx={{
-                py: { xs: 8, md: 12 },
+                py: { xs: 6, md: 10 },
             }}
         >
             <Container maxWidth="md">

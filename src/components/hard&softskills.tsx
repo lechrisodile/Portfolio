@@ -116,7 +116,7 @@ export function Skills() {
     <Box
       id="skills"
       sx={{
-        py: { xs: 8, md: 12 },
+        py: { xs: 6, md: 10 },
         backgroundColor: "background.default",
         display: 'flex',
         flexDirection: 'column',

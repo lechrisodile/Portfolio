@@ -1,5 +1,5 @@
 "use client"
-import { Box, Container, Typography, Grid, Paper, Chip, Avatar, Stack } from '@mui/material'
+import { Box, Container, Typography, Grid, Paper, Chip, Stack } from '@mui/material'
 import { useTheme, alpha } from '@mui/material/styles'
 
 // Icons
@@ -42,7 +42,7 @@ export function About() {
     <Box
       id="about"
       sx={{
-        py: { xs: 8, md: 12 },
+        py: { xs: 6, md: 10 },
       }}
     >
       <Container maxWidth="lg">
@@ -67,33 +67,8 @@ export function About() {
 
         {/* 1. INTRO & PROFIL */}
         <Grid container spacing={6} alignItems="center" sx={{ mb: 10 }}>
-          {/* Photo / Avatar à Gauche */}
-          <Grid size={{ xs: 12, md: 4 }} sx={{ display: 'flex', justifyContent: 'center' }}>
-            <Box
-              sx={{
-                position: 'relative',
-                width: 280,
-                height: 280,
-                borderRadius: '50%',
-                bgcolor: isDark ? alpha(theme.palette.primary.main, 0.1) : alpha(theme.palette.primary.main, 0.05),
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                border: `1px solid ${alpha(theme.palette.primary.main, 0.2)}`,
-                boxShadow: isDark ? '0 0 40px rgba(100, 181, 246, 0.2)' : '0 0 40px rgba(23, 132, 222, 0.1)',
-              }}
-            >
-              {/* Remplace src="" par ta photo : src="images/profile.jpg" */}
-              <Avatar
-                src="images/mePortrait.png"
-                alt="Christan Tchayep"
-                sx={{ width: 250, height: 250 }}
-              />
-            </Box>
-          </Grid>
-
-          {/* Texte Intro à Droite */}
-          <Grid size={{ xs: 12, md: 8 }}>
+          {/* Texte Intro */}
+          <Grid size={{ xs: 12 }}>
             <Typography variant="h4" fontWeight={700} sx={{ mb: 2 }}>
               Hi, I&apos;m Christan Tchayep
             </Typography>

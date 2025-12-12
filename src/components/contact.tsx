@@ -49,7 +49,7 @@ export function Contact() {
     <Box
       id="contact"
       sx={{
-        py: { xs: 8, md: 12 }, // Espacement vertical cohérent avec les autres sections
+        py: { xs: 6, md: 10 }, // Espacement vertical cohérent avec les autres sections
       }}
     >
       <Container maxWidth="md">

@@ -131,7 +131,7 @@ export function Education() {
   ]
 
   return (
-    <Box id="education" sx={{ py: { xs: 8, md: 12 } }}>
+    <Box id="education" sx={{ py: { xs: 6, md: 10 } }}>
       <Container maxWidth="md">
         
         {/* Titre */}

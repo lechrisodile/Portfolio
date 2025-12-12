@@ -123,8 +123,9 @@ export function Achievements() {
 
   return (
     <Box
+      id="achievements"
       sx={{
-        py: { xs: 8, md: 12 },
+        py: { xs: 6, md: 10 },
         backgroundColor: "background.default",
         overflow: 'hidden'
       }}
