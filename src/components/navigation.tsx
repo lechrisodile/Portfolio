@@ -19,12 +19,19 @@ export function Navigation() {
   const [openMenu, setOpenMenu] = useState(false)
   const isMobile = useMediaQuery(theme.breakpoints.down("md"))
   const [scrolled, setScrolled] = useState(false)
+  const [isClient, setIsClient] = useState(false)
 
   useEffect(() => {
+    setIsClient(true)
+  }, [])
+
+  useEffect(() => {
+    if (!isClient) return
+    
     const handleScroll = () => setScrolled(window.scrollY > 50)
     window.addEventListener("scroll", handleScroll)
     return () => window.removeEventListener("scroll", handleScroll)
-  }, [])
+  }, [isClient])
 
   const scrollToSection = (sectionId : string) => {
     const element = document.getElementById(sectionId)

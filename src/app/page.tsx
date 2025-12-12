@@ -2,12 +2,13 @@
 
 import { Hero } from "../components/hero";
 import { About } from "../components/about";
-import { SkillsSection } from "../components/skills";
 import { Contact } from "../components/contact";
-// Navigation retirée d'ici car elle est dans le layout
 import { ProjectsSection } from "../components/project";
 import { Achievements } from "../components/achievements";
 import { Education } from "../components/education";
+import { HardSkills } from "@/components/hardSkills";
+import { SoftSkills } from "@/components/softskills";
+import { Skills } from "@/components/hard&softskills";
 
 export default function Home() {
   return (
@@ -15,7 +16,9 @@ export default function Home() {
       <main>
         <Hero />
         <About />
-        <SkillsSection />
+        {/* <HardSkills />
+        <SoftSkills /> */}
+        <Skills />
         <Education />
         <Achievements />
         <ProjectsSection />

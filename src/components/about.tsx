@@ -169,18 +169,21 @@ export function About() {
                   {step.text}
                 </Typography>
                 <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 1, mt: 'auto' }}>
-                  {step.tags.map((tag, tagIndex) => (
-                    <Chip
-                      key={tagIndex}
-                      label={tag}
-                      size="small"
-                      sx={{
-                        bgcolor: alpha(step.color, 0.15),
-                        color: step.color,
-                        fontWeight: 500,
-                      }}
-                    />
-                  ))}
+                  {step.tags
+                    .slice()
+                    .sort((a, b) => a.localeCompare(b))
+                    .map((tag, tagIndex) => (
+                      <Chip
+                        key={tagIndex}
+                        label={tag}
+                        size="small"
+                        sx={{
+                          bgcolor: alpha(step.color, 0.15),
+                          color: step.color,
+                          fontWeight: 500,
+                        }}
+                      />
+                    ))}
                 </Box>
               </Paper>
             </Grid>

@@ -1,3 +1,5 @@
+"use client"
+
 import { Box, Container, Typography, Paper } from '@mui/material'
 import { useTheme } from '@mui/material/styles'
 import MailIcon from '@mui/icons-material/Mail'

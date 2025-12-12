@@ -1,3 +1,5 @@
+"use client"
+
 import { Box, Container, Typography, Grid, Paper, Chip, IconButton } from '@mui/material'
 import { useTheme, alpha } from '@mui/material/styles'
 import { useState } from 'react'
