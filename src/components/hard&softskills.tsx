@@ -109,7 +109,7 @@ export function Skills() {
 
   const languages = [
     { name: 'French', flag: FlagFR, level: 'Native Speaker' },
-    { name: 'English', flag: FlagGB, level: 'Basic (A1) - Technical Reading' },
+    { name: 'English', flag: FlagGB, level: 'Intermediate (B1)' },
   ]
 
   return (
