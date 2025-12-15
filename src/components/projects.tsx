@@ -30,16 +30,16 @@ const projects: Project[] = [
     
     My next step is to develop the mobile application that will query this server to supervise the system. This project challenges me to bridge the gap between abstract schematics and a physical, working IoT prototype.`,
     techStack: ['LoRa/LoRaWAN', 'MQTT', 'React Native', 'Node.js', 'SQL', 'C++ (Embedded)', 'Biometrics'],
-    images: ['images/secure1.png'] // Ajoutez une image de votre appli mobile ou du schéma système ici
+    images: ['images/pro3.png'] // Ajoutez une image de votre appli mobile ou du schéma système ici
   },
     {
         title: 'Automated Warehouse System',
         type: 'school',
         inProduction: false,
         status: 'Completed – 2nd Year',
-        description: `For this second-year project, my team and I designed an automated warehouse system. My tasks focused on the system architecture and the embedded programming, including motor control and communication with the Raspberry Pi. One of the main challenges was ensuring that the mobile camera could reliably scan items and  after the electromagnet collected them. I also contributed to the electronic safety checks by performing power calculations and verifying component limits.
+        description: `For this second-year project, my team and I designed an automated warehouse system. My tasks focused on the system architecture and the embedded programming, including motor control and communication with the Raspberry Pi. One of the main challenges was ensuring that the mobile camera could reliably scan items and that the electromagnet could collect them reliably after scanning. I also contributed to the electronic safety checks by performing power calculations and verifying component limits.
         
-        This project taught me the importance of considering real-world hardware constraints—such as lighting, mechanical latency, and electrical safety—when developing industrial software. It also confirmed how valuable teamwork can be when everyone combines their strengths and supports one another.`,
+        This project taught me the importance of considering real-world hardware constraints—such as lighting, mechanical latency, and electrical safety—when developing industrial software. It also confirmed the value of teamwork when everyone combines their strengths and supports one another.`,
         techStack: ['Express.js', 'Node.js', 'MySQL', 'Microcontrollers', 'Embedded Systems'],
         images: ['images/projet2.png', 'images/projet21.png', 'images/projet3.png']
     },
@@ -50,9 +50,9 @@ const projects: Project[] = [
         status: 'Completed – 2nd Year',
         description: `For this automation project, the goal was to design a complete temperature control loop using Siemens industrial equipment. I was personally responsible for programming the PLC logic and designing the HMI visualization interface.
 
-    My mission was to implement a Compact PID controller to regulate a heating LED and configure PWM signals to control the cooling fans. To overcome the firmware incompatibilities that hindered communication between the S7-1200 and S7-1500 controllers, the professor allowed us to centralize supervision on a single controller, the S7-1200.
+         My mission was to implement a Compact PID controller to regulate a heating LED and configure PWM signals to control the cooling fans. To overcome the firmware incompatibilities that hindered communication between the S7-1200 and S7-1500 controllers, the professor allowed us to centralize supervision on a single controller, the S7-1200.
 
-    The final system featured a responsive HMI with real-time trends, alarm management and secure administrator access. This project was a decisive experience in mastering the environment of the TIA portal and adapting to material constraints in an industrial context.`,
+        The final system featured a responsive HMI with real-time trends, alarm management and secure administrator access. This project was a decisive experience in mastering the environment of the TIA portal and adapting to material constraints in an industrial context.`,
         techStack: ['Siemens S7-1200', 'TIA Portal', 'HMI KTP600', 'PID Control', 'PWM', 'QElectroTech'],
         images: ['images/automate.png', 'images/automate1.png', 'images/automate2.png', 'images/automate3.png'] // Ajoutez vos images ici (ex: captures du rapport)
     },
@@ -61,9 +61,9 @@ const projects: Project[] = [
         type: 'school',
         inProduction: false,
         status: 'Completed – 2nd Year',
-        description: `This project was another opportunity to deepen my knowledge of interfacing a PC application with external hardware. I chose to develop this interactive game in VB.NET, as required by the professor.
+        description: `This project was another opportunity to deepen my knowledge of interfacing a PC application with external hardware. I chose to develop this interactive game in VB.NET, as requested by the professor.
 
-        The core logic involved reading the analog signal from a potentiometer to simulate the user's response. At first, I had trouble understanding how each part of the Velleman 2003 P8055-1 interface board worked. After doing some research and studying the test program, I finally managed to understand the board's structure and complete my task.
+        The core logic involved reading the analog signal from a potentiometer to simulate the user's response. At first, I had trouble understanding how each part of the Velleman 2003 P8055-1 interface board worked. After conducting some research and studying the test program, I finally understood the board's structure and completed my task.
 
         Although the game itself is simple, this project highlighted the importance of understanding other people's code and reinforced the need to write clear, well-commented programs. It also gave me practical experience in reading hardware inputs and controlling outputs, which are essential skills when working with embedded systems.`,
         techStack: ['VB.NET', 'Visual Studio', 'P8055 Board'],
@@ -77,7 +77,7 @@ const projects: Project[] = [
         description:
             `As part of my first year, I carried out a project to create two electronic dice displaying their values simultaneously on a PC and on two LED matrices driven by a Velleman PVM1001N board.
 
-            My mission was to program the random generation, display patterns, and serial communication between the PC and the board in C. I tested each component individually, identified the failing elements, corrected wiring errors, and adjusted the communication logic to ensure perfect synchronization between the modules.
+            My mission was to implement random number generation, display patterns, and serial communication between the PC and the board in C. I tested each component individually, identified the failing elements, corrected wiring errors, and adjusted the communication logic to ensure perfect synchronization between the modules.
     
             The system ultimately functioned correctly, displaying the matching value on the PC and the LED matrix. This project allowed me to acquire essential skills in digital electronics, low-level C programming, and hardware diagnostics, as well as a first concrete experience in software-hardware interfacing, reinforcing my overall understanding of embedded systems.`,
         techStack: ['C', 'Microcontrollers', 'Digital Electronics', 'Serial Communication', 'LED Matrix Control', 'GANTT', 'PERT'],

@@ -109,12 +109,12 @@ export function Education() {
 
   const education = [
     {
-      degree: "Bachelor in Industrial Computing",
+      degree: "Bachelor's in Industrial Computing",
       school: "Haute École Louvain en Hainaut",
       status: "Current",
       date: "2023 - 2026",
       images: ["images/helha.png"], 
-      description: "Focused on electronics, automation, and industrial IT. The curriculum includes intensive practical training at TechnoCampus (Competence Center), covering Pneumatics, Hydraulics, Regulation (Control Loops), Electrical Cabinet Maintenance, and Industrial Networks.",
+      description: "Focused on electronics, automation, and industrial IT. The curriculum includes intensive practical training at Techno Campus (Competence Center), covering Pneumatics, Hydraulics, Regulation (Control Loops), Electrical Cabinet Maintenance, and Industrial Networks.",
       color: "#1976d2",
       tags: ["Automation", "IT", "Pneumatics", "Hydraulics", "Regulation"]
     },
@@ -124,7 +124,7 @@ export function Education() {
       status: "Completed",
       date: "2022 - 2023",
       images: ["images/Yaounde1.png"],
-      description: "Foundation year centered on core scientific disciplines such as mechanics, optics, general physics, chemistry, and applied mathematics. Practical work included hands-on sessions in both chemistry and physics laboratories.",
+      description: "The foundation year focused on core scientific disciplines, including mechanics, optics, general physics, chemistry, and applied mathematics. Practical work included hands-on sessions in both chemistry and physics laboratories.",
       color: "#9c27b0",
       tags: ["Mechanics", "Optics", "Applied Math", "Lab Work"]
     }

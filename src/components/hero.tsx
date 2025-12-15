@@ -122,7 +122,7 @@ export function Hero() {
               lineHeight: 1.6,
             }}
           >
-            Hi, I&apos;m Christan, a 22-year-old industrial computing engineer passionate about innovation.
+            Hi, I am Christan, a 22-year-old industrial computing engineer passionate about innovation.
             I bridge embedded hardware with modern software to create intelligent systems.
           </Typography>
 

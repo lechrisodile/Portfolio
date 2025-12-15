@@ -20,7 +20,7 @@ export function Skills() {
       icon: <BoltIcon />,
       color: "#f59e0b", // Amber
       situation: "During the Automated Warehouse project, I realized that my teammates had lost interest in the work, leaving me to handle the project largely on my own.",
-      action: "I took the initiative to bring the necessary equipment home and work independently to ensure progress. By reorganizing the tasks and managing the development alone, I successfully completed the project.",
+      action: "I took the initiative to bring the necessary equipment home and work independently to ensure progress. By reorganizing the tasks and managing the development alone, I completed the project.",
       result: "The final system worked flawlessly, and the group ultimately succeeded thanks to my dedication and problem-solving efforts."
     },
     {

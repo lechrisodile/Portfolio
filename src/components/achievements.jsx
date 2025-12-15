@@ -13,14 +13,14 @@ const achievements = [
     title: "National Competitor - Industry 4.0",
     subtitle: "StarTech Day 2025 (WorldSkills Belgium)",
     year: "2025",
-    description: "Selected to compete in the national finals at StarTech Day 2025 after a successful pre-selection phase. During this intensive 3-day competition, I programmed Siemens PLCs, developed HMI interfaces, and managed industrial networks under strict time constraints. This experience was a true test of my technical skills and my ability to perform under pressure, reinforcing my passion for industrial automation.",
+    description: "Selected to compete in the national finals at StarTech Day 2025 after a successful pre-selection phase. During this intensive 3-day competition, I programmed Siemens PLCs, developed HMI interfaces, and managed industrial networks under strict time constraints. This experience was an actual test of my technical skills and my ability to perform under pressure, reinforcing my passion for industrial automation.",
     images: ["images/worldskills.png"], 
     icon: <EmojiEventsIcon />,
     color: "#2d9bfbff", // Bleu cyan
     tags: ["Siemens PLC", "HMI", "Pneumatics", "Industrial Network", "CIROS", "MES4"]
   },
   {
-    title: "Hackathon AI for GOOD",
+    title: "Hackathon AI4GOOD",
     subtitle: "AI Study Assistant Project",
     year: "2025",
     description: "Participated in a hackathon focused on ethical AI, where my team and I developed an AI-driven study assistant. My role involved integrating Large Language Models (LLM) to transform educational content into interactive quizzes. This project not only honed my coding skills in Python and React but also taught me the value of agile collaboration and rapid prototyping to deliver a functional MVP in a limited timeframe.",

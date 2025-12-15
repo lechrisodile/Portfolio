@@ -16,7 +16,7 @@ export function About() {
       title: "Goal",
       icon: <EmojiObjects />,
       color: "#f57c00", // Orange
-      text: "My goal is to work for a company specializing in one of the fields of industrial IT, so that I can play an active role in technological progress and contribute to the development of society.",
+      text: "My goal is to work for a company specializing in one of the fields of industrial IT, so that I can play an active role in technological progress and contribute to society's development.",
       tags: ["Industrial IT", "Innovation", "Impact"],
     },
     {
@@ -67,12 +67,12 @@ export function About() {
           {/* Texte Intro */}
           <Grid size={{ xs: 12 }}>
             <Typography variant="h4" fontWeight={700} sx={{ mb: 2 }}>
-              Hi, I&apos;m Christan Tchayep
+              Hi, I am Christan Tchayep
             </Typography>
 
             {/* Paragraphe 1 : Identité & Parcours (Cameroun -> Belgique) */}
             <Typography variant="body1" color="text.secondary" sx={{ fontSize: '1.1rem', lineHeight: 1.8, mb: 2, textAlign: 'justify' }}>
-              I&apos;m 22 years old and currently a third-year student in industrial computer science at HELHa in Charleroi.
+              I am 22 years old and currently a third-year student in industrial computer science at HELHa in Charleroi.
               Born in Cameroon, I completed my primary and secondary education there, graduating with my high school diploma in 2022.
               I then began my first year of physics at the University of Yaoundé I, which I successfully completed.
             </Typography>
@@ -89,7 +89,7 @@ export function About() {
               Their constant motivation played an essential role in my determination to pursue higher education and to give my best in everything I undertake.
             </Typography>
             <Typography variant="body1" color="text.secondary" sx={{ fontSize: '1.1rem', lineHeight: 1.8, mb: 4, textAlign: 'justify' }}>
-              During my first two years at HELHa, I managed to successfully pass all my courses thanks to consistent work, strong motivation, and good time management. 
+              During my first two years at HELHa, I completed all my courses thanks to consistent work, strong motivation, and good time management. 
               In parallel with my studies, I also take on student jobs to finance my education and cover my living expenses. These work experiences have helped me develop a sense of responsibility, autonomy, and perseverance, while allowing me to pursue my academic goals under good conditions.
             </Typography>
 
