@@ -19,19 +19,42 @@ interface Project {
 }
 
 const projects: Project[] = [
-     {
-    title: 'Secure IoT Door Access System',
-    type: 'school',
-    inProduction: true,
-    status: 'Ongoing – 3rd Year',
-    description: `For my final year project, I am developing a secure access control system based on a specific architectural schema provided by the school. The system grants access via fingerprint for managers and RFID badges for employees.
+    {
+        title: 'Secure IoT Door Access System',
+        type: 'school',
+        inProduction: false,
+        status: 'Completed – 3rd Year',
+        description: `For my final year project, I am developing a secure access control system based on a specific architectural schema provided by the school. The system grants access via fingerprint for managers and RFID badges for employees.
 
     I have already completed the embedded systems programming, successfully controlling the communication between sensors, actuators, and the LoRa Shield. I am currently focused on the physical construction phase, wiring the control box and assembling the power interfaces. The data flux is designed to transmit access logs from the LoRa Gateway to a web server and database.
     
     My next step is to develop the mobile application that will query this server to supervise the system. This project challenges me to bridge the gap between abstract schematics and a physical, working IoT prototype.`,
-    techStack: ['LoRa/LoRaWAN', 'MQTT', 'React Native', 'Node.js', 'SQL', 'C++ (Embedded)', 'Biometrics'],
-    images: ['images/pro3.png'] // Ajoutez une image de votre appli mobile ou du schéma système ici
-  },
+        techStack: ['LoRa/LoRaWAN', 'MQTT', 'React Native', 'Node.js', 'SQL', 'C++ (Embedded)', 'Biometrics'],
+        images: ['images/interface.png', 'images/structure.png', 'images/control_box.png', 'images/box.png',]
+    },
+    {
+        title: 'Industrial Supervision & Digital Twin (MU3)',
+        type: 'school',
+        inProduction: false,
+        status: 'Completed – 3rd Year',
+        description: `As part of a group project, we developed a digital twin of the MU3 mini-factory featuring dual visualization: 
+        an immersive virtual reality interface using a VR headset, as well as a web dashboard enabling real-time monitoring of the facilities. 
+        The goal of this system was to effectively oversee the welding (Zone 3) and cutting/storage (Zone 4) areas.
+
+        The project relied on the collection and distribution of industrial data from Siemens PLCs, made available through a customized architecture. 
+        Following technical constraints encountered early in the project, we collectively evolved our solution toward a virtualized environment based on Proxmox and Docker, 
+        with data flow management handled via Node-RED and an MQTT broker.
+
+        Within the team, I focused primarily on developing the web interface. 
+        I contributed to the design and implementation of a comprehensive dashboard based on the T3 Stack, 
+        enabling real-time data visualization and ensuring data archiving in a MySQL database. 
+        Particular attention was paid to usability and the clarity of information to meet the needs of industrial monitoring.
+
+        This project resulted in a coherent and functional solution, combining immersive visualization and a web interface, t
+        hereby offering modern and intuitive monitoring of industrial processes.`,
+        techStack: ['Next.js (T3 Stack)', 'Node-RED', 'MQTT', 'Godot (GDScript)', 'Docker/Proxmox', 'Siemens PLC', 'MySQL'],
+        images: ['images/zone.png', 'images/indus_das.jpg', 'images/indus_flux.png', 'images/indus_vr.png']
+    },
     {
         title: 'Automated Warehouse System',
         type: 'school',
