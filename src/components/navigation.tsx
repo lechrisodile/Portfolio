@@ -54,7 +54,7 @@ export function Navigation() {
   }
 
   const navLinks = [
-    { label: "About", id: "about" },
+    { label: "About Me", id: "about" },
     { label: "Skills", id: "skills" },
     { label: "Education", id: "education" },
     { label: "Projects", id: "projects" },

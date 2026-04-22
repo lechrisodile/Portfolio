@@ -6,6 +6,16 @@ import { useTheme, alpha } from '@mui/material/styles'
 import SchoolIcon from '@mui/icons-material/School';
 import { EmojiObjects, SportsSoccer } from '@mui/icons-material';
 
+function calculateAge(): number {
+  const today = new Date()
+  const birth = new Date("2003-03-10")
+  let age = today.getFullYear() - birth.getFullYear()  
+  const monthDiff = today.getMonth() - birth.getMonth()
+  if (monthDiff < 0 || (monthDiff === 0 && today.getDate() < birth.getDate())) {
+    age--
+  }
+  return age
+}
 export function About() {
   const theme = useTheme()
   const isDark = theme.palette.mode === 'dark'
@@ -35,6 +45,7 @@ export function About() {
     },
   ]
 
+  
   return (
     <Box
       id="about"
@@ -72,7 +83,7 @@ export function About() {
 
             {/* Paragraphe 1 : Identité & Parcours (Cameroun -> Belgique) */}
             <Typography variant="body1" color="text.secondary" sx={{ fontSize: '1.1rem', lineHeight: 1.8, mb: 2, textAlign: 'justify' }}>
-              I am 22 years old and currently a third-year student in industrial computer science at HELHa in Charleroi.
+              I am {calculateAge()} years old and currently a third-year student in industrial computer science at HELHa in Charleroi.
               Born in Cameroon, I completed my primary and secondary education there, graduating with my high school diploma in 2022.
               I then began my first year of physics at the University of Yaoundé I, which I successfully completed.
             </Typography>
