@@ -37,7 +37,7 @@ export function Navigation() {
     if (sectionId === "hero") {
       // Pour le hero, aller tout en haut
       window.scrollTo({ top: 0, behavior: "smooth" })
-      window.history.replaceState(null, "", "/")
+      window.history.replaceState(null, "", "/#")
       setOpenMenu(false)
       return
     }
@@ -48,7 +48,7 @@ export function Navigation() {
       const elementPosition = element.getBoundingClientRect().top
       const offsetPosition = elementPosition + window.pageYOffset - headerOffset
       window.scrollTo({ top: offsetPosition, behavior: "smooth" })
-      window.history.replaceState(null, "", `${sectionId}`)
+      window.history.replaceState(null, "", `/#${sectionId}`)
       setOpenMenu(false)
     }
   }
