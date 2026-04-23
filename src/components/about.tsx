@@ -6,7 +6,7 @@ import { useTheme, alpha } from '@mui/material/styles'
 import SchoolIcon from '@mui/icons-material/School';
 import { EmojiObjects, SportsSoccer } from '@mui/icons-material';
 
-function calculateAge(): number {
+export function calculateAge(): number {
   const today = new Date()
   const birth = new Date("2003-03-10")
   let age = today.getFullYear() - birth.getFullYear()  

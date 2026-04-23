@@ -5,6 +5,7 @@ import { useTheme, alpha } from "@mui/material/styles"
 import SendIcon from '@mui/icons-material/Send';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import CircleIcon from '@mui/icons-material/Circle';
+import { calculateAge } from "./about";
 
 export function Hero() {
   const theme = useTheme()
@@ -122,7 +123,7 @@ export function Hero() {
               lineHeight: 1.6,
             }}
           >
-            Hi, I am Christan, a 22-year-old industrial computing engineer passionate about innovation.
+            Hi, I am Christan, a {calculateAge()} year old industrial computing engineer passionate about innovation.
             I bridge embedded hardware with modern software to create intelligent systems.
           </Typography>
 
